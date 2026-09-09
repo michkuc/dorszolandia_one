@@ -1,7 +1,8 @@
-Dorszolandia v22 PREMIUM FINAL
+Dorszolandia v22 PREMIUM FINAL QA
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 20332188
-Package SHA256: f50e56ff3f5162a22ace82aa5729bf9837371bd60769d13392cd0002e88fa43e
+Package bytes: 20325797
+Package SHA256: 9fb1e936ef491131ebaa9029e0a442ee5f743689bae9b88ef3f0549797bbaa55
+Build version: v22-premium-final-qa-production
 Stories: 56 pełnych historii z MASTER FINAL
 Atlas: 59 nazwanych postaci z Atlasu v3
 Story characters: 10
@@ -9,6 +10,6 @@ Premium hero: makieta użytkownika 2026-09-09
 Premium map: 12 widocznych nazwanych miejsc
 ZIP characters: Dorszuś, Borys, Krab Szczękacz, Krab Krabiewicz, Pani Świecikora
 Creator: 36 rekwizytów
-QA: validate.py OK; app.js syntax OK; 170 asset refs checked; 0 missing
-Vercel Preview: SUCCESS
-Pipeline: preview/v22-premium -> Vercel Preview -> main/production
+QA: validate.py OK; app.js syntax OK; 170 asset refs checked; 0 missing; 38 internal links checked; 0 broken; duplicate HTML IDs 0; alt text 75/75
+Vercel Production: SUCCESS
+Pipeline: main -> Vercel production
