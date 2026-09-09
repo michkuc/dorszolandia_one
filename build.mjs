@@ -3,18 +3,18 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const BUILD_VERSION = 'v21-drive-master-sync-preview';
-const FILE_ID = '1mjXWjy4nYCMq9rY7sP5RmSYvFqIbi4eO';
+const BUILD_VERSION = 'v22-premium-mockup-sync-preview';
+const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '672e4813e6dd648b77f87dd352f0f831b779beee849b2fd2b3d9babcc3142161';
-const EXPECTED_BYTES = 19393809;
+const EXPECTED_SHA256 = 'eea5b1357d6d0f202f3506beac3135ccc92c7bb0fd7d82c22ef9d0c8c40b2fea';
+const EXPECTED_BYTES = 29595590;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
 const packed = Buffer.from(await response.arrayBuffer());
 const sha = crypto.createHash('sha256').update(packed).digest('hex');
-if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v21 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
-if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v21 nie zgadza się: ${sha}`);
+if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v22 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
+if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v22 nie zgadza się: ${sha}`);
 
 const tar = zlib.gunzipSync(packed);
 fs.rmSync('dist', { recursive: true, force: true });
@@ -53,9 +53,9 @@ while (offset + 512 <= tar.length) {
   offset += Math.ceil(size / 512) * 512;
 }
 
-if (!fs.existsSync('dist/index.html')) throw new Error('Brak dist/index.html po rozpakowaniu v21.');
+if (!fs.existsSync('dist/index.html')) throw new Error('Brak dist/index.html po rozpakowaniu v22.');
 const html = fs.readFileSync('dist/index.html', 'utf8');
-if (!html.includes('v21 drive master sync')) throw new Error('index.html nie ma markera v21 Drive Master Sync.');
+if (!html.includes('v22 premium mockup sync')) throw new Error('index.html nie ma markera v22 Premium Mockup Sync.');
 fs.writeFileSync('dist/vercel-build.txt', [
   `Dorszolandia ${BUILD_VERSION}`,
   `Drive package ${FILE_ID}`,
