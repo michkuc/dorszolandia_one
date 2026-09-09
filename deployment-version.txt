@@ -1,7 +1,14 @@
-Dorszolandia v18.2 Production QA
-Source version: v18.1 Full Web Premium · Dorsze Drive
-Source Drive file: 1CCPcSbiZXiL4Z0Yb6_pLYvC1DLtHiZST
-Source bytes: 6134296
-Source SHA256: 787bb0e031e5e805e85e33ed95b0198afb0290a26c54ffcd70f2cd97ffa48878
-Production fixes: Dorszuś spelling + asset guard + build/version marker
-Deployment pipeline: GitHub main -> Vercel production
+Dorszolandia v22 PREMIUM FINAL
+Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
+Package bytes: 20332188
+Package SHA256: f50e56ff3f5162a22ace82aa5729bf9837371bd60769d13392cd0002e88fa43e
+Stories: 56 pełnych historii z MASTER FINAL
+Atlas: 59 nazwanych postaci z Atlasu v3
+Story characters: 10
+Premium hero: makieta użytkownika 2026-09-09
+Premium map: 12 widocznych nazwanych miejsc
+ZIP characters: Dorszuś, Borys, Krab Szczękacz, Krab Krabiewicz, Pani Świecikora
+Creator: 36 rekwizytów
+QA: validate.py OK; app.js syntax OK; 170 asset refs checked; 0 missing
+Vercel Preview: SUCCESS
+Pipeline: preview/v22-premium -> Vercel Preview -> main/production
