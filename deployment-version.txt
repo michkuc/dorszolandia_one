@@ -1,7 +1,9 @@
-Dorszolandia v18.2 Production QA
-Source version: v18.1 Full Web Premium · Dorsze Drive
-Source Drive file: 1CCPcSbiZXiL4Z0Yb6_pLYvC1DLtHiZST
-Source bytes: 6134296
-Source SHA256: 787bb0e031e5e805e85e33ed95b0198afb0290a26c54ffcd70f2cd97ffa48878
-Production fixes: Dorszuś spelling + asset guard + build/version marker
-Deployment pipeline: GitHub main -> Vercel production
+Dorszolandia v20 TWO CYCLES — PREVIEW
+Source package: Dorszolandia_v20_TWO_CYCLES.zip
+Drive file: 1ewKW-QhNuDG7fhn0FP9JJ433Qv83DgvS
+Source bytes: 5707287
+Source SHA256: 3bb0773a8c38db4b99290b3c48ac193132cf69cba12636322385f93e9dce2f44
+Story cycle 1: Przygody Borysa i Dorszusia — 20 full stories
+Story cycle 2: Legendy Bohaterów Dorszolandii — 18 atlas-based legends/story seeds
+Graphics: 96 active assets + 8 mapped reference graphics
+Deployment pipeline: GitHub preview branch -> Vercel Preview -> manual production approval
