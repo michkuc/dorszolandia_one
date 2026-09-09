@@ -1,48 +1,69 @@
 import fs from 'node:fs';
+import path from 'node:path';
+import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const BUILD_VERSION = 'v18.2';
-const SOURCE_VERSION = 'v18.1';
-const FILE_ID = '1CCPcSbiZXiL4Z0Yb6_pLYvC1DLtHiZST';
+const BUILD_VERSION = 'v21-drive-master-sync-preview';
+const FILE_ID = '1mjXWjy4nYCMq9rY7sP5RmSYvFqIbi4eO';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '787bb0e031e5e805e85e33ed95b0198afb0290a26c54ffcd70f2cd97ffa48878';
-const EXPECTED_BYTES = 6134296;
+const EXPECTED_SHA256 = '672e4813e6dd648b77f87dd352f0f831b779beee849b2fd2b3d9babcc3142161';
+const EXPECTED_BYTES = 19393809;
 
-fs.mkdirSync('dist', { recursive: true });
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
-const bytes = Buffer.from(await response.arrayBuffer());
-const sha = crypto.createHash('sha256').update(bytes).digest('hex');
-if (bytes.length !== EXPECTED_BYTES) throw new Error(`Rozmiar ${SOURCE_VERSION} nie zgadza się: ${bytes.length} != ${EXPECTED_BYTES}`);
-if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 ${SOURCE_VERSION} nie zgadza się: ${sha}`);
-if (!bytes.subarray(0, 240).toString('utf8').toLowerCase().includes('<!doctype html')) throw new Error(`Pobrany plik nie wygląda jak Dorszolandia ${SOURCE_VERSION} Full Web Premium.`);
+const packed = Buffer.from(await response.arrayBuffer());
+const sha = crypto.createHash('sha256').update(packed).digest('hex');
+if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v21 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
+if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v21 nie zgadza się: ${sha}`);
 
-let html = bytes.toString('utf8');
+const tar = zlib.gunzipSync(packed);
+fs.rmSync('dist', { recursive: true, force: true });
+fs.mkdirSync('dist', { recursive: true });
 
-// v18.2: korekty produkcyjne bez zmiany źródłowego pliku Drive.
-html = html.replaceAll('Dorsuś', 'Dorszuś');
+const readString = (buf, start, len) => buf.subarray(start, start + len).toString('utf8').replace(/\0.*$/s, '');
+const readOctal = (buf, start, len) => {
+  const s = readString(buf, start, len).trim().replace(/\0/g, '');
+  return s ? parseInt(s, 8) : 0;
+};
 
-const buildMeta = `\n<meta name="dorszolandia-build" content="${BUILD_VERSION}">\n<meta name="dorszolandia-source" content="${SOURCE_VERSION}">\n`;
-if (!html.includes('name="dorszolandia-build"')) {
-  html = html.replace('</head>', `${buildMeta}</head>`);
+let offset = 0;
+let files = 0;
+while (offset + 512 <= tar.length) {
+  const header = tar.subarray(offset, offset + 512);
+  if (header.every(b => b === 0)) break;
+  const name = readString(header, 0, 100);
+  const prefix = readString(header, 345, 155);
+  const rawName = (prefix ? `${prefix}/${name}` : name).replace(/^\.\//, '');
+  const size = readOctal(header, 124, 12);
+  const type = String.fromCharCode(header[156] || 48);
+  offset += 512;
+  const normalized = path.posix.normalize(rawName);
+  if (!normalized || normalized === '.' || normalized.startsWith('../') || path.posix.isAbsolute(normalized)) {
+    if (normalized === '.') { offset += Math.ceil(size / 512) * 512; continue; }
+    throw new Error(`Niebezpieczna ścieżka TAR: ${rawName}`);
+  }
+  const target = path.join('dist', ...normalized.split('/'));
+  if (type === '5') {
+    fs.mkdirSync(target, { recursive: true });
+  } else if (type === '0' || type === '\0') {
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, tar.subarray(offset, offset + size));
+    files++;
+  }
+  offset += Math.ceil(size / 512) * 512;
 }
 
-// Ostatnia warstwa bezpieczeństwa dla grafik osadzonych w dorszAssetStore.
-// Naprawia brakujące src po dynamicznym dodaniu elementów i zabezpiecza Kreator.
-const assetGuard = `\n<script id="dorsz-v182-asset-guard">\n(()=>{\n  document.documentElement.dataset.dorszBuild='${BUILD_VERSION}';\n  let assets={};\n  try{\n    const store=document.getElementById('dorszAssetStore');\n    if(store) assets=JSON.parse(store.textContent||'{}');\n  }catch(e){ assets={}; }\n\n  const hydrate=()=>{\n    document.querySelectorAll('[data-src-key]').forEach(el=>{\n      const key=el.dataset.srcKey;\n      const src=assets[key];\n      if(!src) return;\n      if(!el.getAttribute('src')) el.setAttribute('src',src);\n      if(el.tagName==='IMG'){\n        el.decoding='async';\n        if(!el.closest('.hero,.premium-duo')) el.loading='lazy';\n        if(!el.dataset.assetGuard){\n          el.dataset.assetGuard='1';\n          el.addEventListener('error',()=>{\n            if(el.getAttribute('src')!==src) el.setAttribute('src',src);\n          },{passive:true});\n        }\n      }\n    });\n  };\n\n  hydrate();\n  if(document.body){\n    const observer=new MutationObserver(()=>hydrate());\n    observer.observe(document.body,{childList:true,subtree:true});\n  }\n})();\n</script>\n`;
-if (!html.includes('id="dorsz-v182-asset-guard"')) {
-  html = html.replace('</body>', `${assetGuard}</body>`);
-}
-
-fs.writeFileSync('dist/index.html', html);
-fs.writeFileSync('dist/version.txt', [
+if (!fs.existsSync('dist/index.html')) throw new Error('Brak dist/index.html po rozpakowaniu v21.');
+const html = fs.readFileSync('dist/index.html', 'utf8');
+if (!html.includes('v21 drive master sync')) throw new Error('index.html nie ma markera v21 Drive Master Sync.');
+fs.writeFileSync('dist/vercel-build.txt', [
   `Dorszolandia ${BUILD_VERSION}`,
-  `Source ${SOURCE_VERSION}`,
-  `Source Drive file ${FILE_ID}`,
-  `Source bytes ${bytes.length}`,
-  `Source SHA256 ${sha}`,
+  `Drive package ${FILE_ID}`,
+  `Package bytes ${packed.length}`,
+  `Package SHA256 ${sha}`,
+  `Extracted files ${files}`,
   `Built ${new Date().toISOString()}`,
   ''
 ].join('\n'));
 
-console.log(`Dorszolandia ${BUILD_VERSION} · source ${SOURCE_VERSION} · ${bytes.length} bytes · SHA256 ${sha}`);
+console.log(`Dorszolandia ${BUILD_VERSION}: ${files} plików · ${packed.length} B · ${sha}`);
