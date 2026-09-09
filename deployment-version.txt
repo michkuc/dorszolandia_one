@@ -1,10 +1,13 @@
-Dorszolandia v21 DRIVE MASTER SYNC — PREVIEW
-Drive package: 1mjXWjy4nYCMq9rY7sP5RmSYvFqIbi4eO
-Package bytes: 19393809
-Package SHA256: 672e4813e6dd648b77f87dd352f0f831b779beee849b2fd2b3d9babcc3142161
+Dorszolandia v22 PREMIUM MOCKUP SYNC — PREVIEW
+Drive package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
+Package bytes: 29595590
+Package SHA256: eea5b1357d6d0f202f3506beac3135ccc92c7bb0fd7d82c22ef9d0c8c40b2fea
 Stories: 56 pełnych historii z MASTER FINAL
 Atlas: 59 nazwanych postaci z Atlasu v3
-Creator: 36 rekwizytów, 4 średniowieczne grafiki HQ podmienione z Drive
-Map: 8 pinów na faktycznie widocznych obiektach + 4 miejsca fabularne w Dorszopedii
-Pipeline: preview/v21-drive-master-sync -> Vercel Preview
+Story characters: 10
+Premium hero: makieta użytkownika 2026-09-09
+Premium map: 12 widocznych nazwanych miejsc
+ZIP characters: Dorszuś, Borys, Krab Szczękacz, Krab Krabiewicz, Pani Świecikora
+Creator: 36 rekwizytów
+Pipeline: preview/v22-premium -> Vercel Preview
 Production: bez zmian do czasu akceptacji Preview
