@@ -6,8 +6,8 @@ import crypto from 'node:crypto';
 const BUILD_VERSION = 'v22-premium-mockup-sync-preview';
 const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = 'eea5b1357d6d0f202f3506beac3135ccc92c7bb0fd7d82c22ef9d0c8c40b2fea';
-const EXPECTED_BYTES = 29595590;
+const EXPECTED_SHA256 = 'f50e56ff3f5162a22ace82aa5729bf9837371bd60769d13392cd0002e88fa43e';
+const EXPECTED_BYTES = 20332188;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
