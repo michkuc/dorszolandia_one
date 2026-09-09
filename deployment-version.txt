@@ -1,7 +1,10 @@
-Dorszolandia v18.2 Production QA
-Source version: v18.1 Full Web Premium · Dorsze Drive
-Source Drive file: 1CCPcSbiZXiL4Z0Yb6_pLYvC1DLtHiZST
-Source bytes: 6134296
-Source SHA256: 787bb0e031e5e805e85e33ed95b0198afb0290a26c54ffcd70f2cd97ffa48878
-Production fixes: Dorszuś spelling + asset guard + build/version marker
-Deployment pipeline: GitHub main -> Vercel production
+Dorszolandia v21 DRIVE MASTER SYNC — PREVIEW
+Drive package: 1mjXWjy4nYCMq9rY7sP5RmSYvFqIbi4eO
+Package bytes: 19393809
+Package SHA256: 672e4813e6dd648b77f87dd352f0f831b779beee849b2fd2b3d9babcc3142161
+Stories: 56 pełnych historii z MASTER FINAL
+Atlas: 59 nazwanych postaci z Atlasu v3
+Creator: 36 rekwizytów, 4 średniowieczne grafiki HQ podmienione z Drive
+Map: 8 pinów na faktycznie widocznych obiektach + 4 miejsca fabularne w Dorszopedii
+Pipeline: preview/v21-drive-master-sync -> Vercel Preview
+Production: bez zmian do czasu akceptacji Preview
