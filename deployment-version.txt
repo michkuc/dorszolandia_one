@@ -1,5 +1,7 @@
-Dorszolandia v17.2 Production Premium
-Source: Google Drive file 1vjqykLE1kifl9kpxuRDhq9IsPBr8PHaZ
-Expected bytes: 5888402
-SHA256: 26afe445dea56b844fd84420f5187750da49bd289536e0bdda23461318970aa7
+Dorszolandia v18.2 Production QA
+Source version: v18.1 Full Web Premium · Dorsze Drive
+Source Drive file: 1CCPcSbiZXiL4Z0Yb6_pLYvC1DLtHiZST
+Source bytes: 6134296
+Source SHA256: 787bb0e031e5e805e85e33ed95b0198afb0290a26c54ffcd70f2cd97ffa48878
+Production fixes: Dorszuś spelling + asset guard + build/version marker
 Deployment pipeline: GitHub main -> Vercel production
