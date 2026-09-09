@@ -1,15 +1,15 @@
-Dorszolandia v22 PREMIUM FINAL QA
+Dorszolandia v23.1 PREMIUM MULTIPAGE QA
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 20325797
-Package SHA256: 9fb1e936ef491131ebaa9029e0a442ee5f743689bae9b88ef3f0549797bbaa55
-Build version: v22-premium-final-qa-production
+Package bytes: 9978204
+Package SHA256: 96651c3c85c1b19113d98148610907e7fb8bbfcc0e206cee1c54852bffae8b6a
+Build version: v23.1-premium-multipage-qa-production
+Architecture: 11 independent pages with clean URLs
 Stories: 56 pełnych historii z MASTER FINAL
 Atlas: 59 nazwanych postaci z Atlasu v3
 Story characters: 10
-Premium hero: makieta użytkownika 2026-09-09
 Premium map: 12 widocznych nazwanych miejsc
-ZIP characters: Dorszuś, Borys, Krab Szczękacz, Krab Krabiewicz, Pani Świecikora
 Creator: 36 rekwizytów
-QA: validate.py OK; app.js syntax OK; 170 asset refs checked; 0 missing; 38 internal links checked; 0 broken; duplicate HTML IDs 0; alt text 75/75
-Vercel Production: SUCCESS
+Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
+QA: validate.py OK; app.js syntax OK; single H1 on 11/11 pages; clean internal routes; mobile dock fixed; creator mobile overflow fixed in CSS; OG/Twitter image metadata added; page-specific data bundles; 6 material graphics optimized to WebP; missing assets 0
+Vercel Production: SUCCESS on deployment commit 576c1d89dbf7288a165b607311f6c4afe8d4f140
 Pipeline: main -> Vercel production
