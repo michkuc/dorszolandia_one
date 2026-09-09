@@ -3,18 +3,18 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const BUILD_VERSION = 'v23-premium-multipage-production';
+const BUILD_VERSION = 'v23.1-premium-multipage-qa-production';
 const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = 'f15cbf897afb2b5be0b01731140619195700e944587358fc2914f05648d278e3';
-const EXPECTED_BYTES = 20341860;
+const EXPECTED_SHA256 = '96651c3c85c1b19113d98148610907e7fb8bbfcc0e206cee1c54852bffae8b6a';
+const EXPECTED_BYTES = 9978204;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
 const packed = Buffer.from(await response.arrayBuffer());
 const sha = crypto.createHash('sha256').update(packed).digest('hex');
-if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v23 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
-if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v23 nie zgadza się: ${sha}`);
+if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v23.1 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
+if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v23.1 nie zgadza się: ${sha}`);
 
 const tar = zlib.gunzipSync(packed);
 fs.rmSync('dist', { recursive: true, force: true });
@@ -53,9 +53,9 @@ while (offset + 512 <= tar.length) {
   offset += Math.ceil(size / 512) * 512;
 }
 
-if (!fs.existsSync('dist/index.html')) throw new Error('Brak dist/index.html po rozpakowaniu v23.');
+if (!fs.existsSync('dist/index.html')) throw new Error('Brak dist/index.html po rozpakowaniu v23.1.');
 const html = fs.readFileSync('dist/index.html', 'utf8');
-if (!html.includes('v23 premium multipage')) throw new Error('index.html nie ma markera v23 Premium Multipage.');
+if (!html.includes('v23.1 premium multipage QA')) throw new Error('index.html nie ma markera v23.1 Premium Multipage QA.');
 for (const page of ['mapa.html','mieszkancy.html','dorszopedia.html','przygody.html','gry.html','kreator.html','materialy.html','sklep.html','piosenka.html','kontakt.html']) {
   if (!fs.existsSync(path.join('dist', page))) throw new Error(`Brak podstrony ${page}`);
 }
@@ -66,6 +66,7 @@ fs.writeFileSync('dist/vercel-build.txt', [
   `Package SHA256 ${sha}`,
   `Extracted files ${files}`,
   `Architecture multipage`,
+  `QA creator-mobile + clean-urls + single-h1 + social-meta + optimized-data`,
   `Built ${new Date().toISOString()}`,
   ''
 ].join('\n'));
