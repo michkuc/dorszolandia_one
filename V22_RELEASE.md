@@ -1,28 +1,36 @@
-# Dorszolandia v22 PREMIUM — Preview
+# Dorszolandia v22 PREMIUM — FINAL
 
-Wersja wizualna zgodna z premium makietami użytkownika, bez utraty danych v21.
+Wersja premium zgodna z makietami użytkownika z 09.09.2026, bez utraty danych v21.
 
 ## Najważniejsze zmiany
-- hero premium z makiety z 09.09.2026,
+- hero premium zgodny z kierunkiem makiet,
 - mapa premium z 12 nazwanymi miejscami,
-- Dorszuś i Borys podmienieni na nowe grafiki z przesłanego ZIP,
-- Krab Szczękacz i Pani Świecikora również podmienieni na wersje z ZIP,
-- dodany Krab Krabiewicz jako 10. postać cyklu,
-- nowa warstwa CSS premium: szkło, mocniejsze karty, zwarty landing i bardziej kolorowe sekcje,
+- Dorszuś i Borys podmienieni na grafiki z przesłanego ZIP,
+- Krab Szczękacz i Pani Świecikora podmienieni na wersje z ZIP,
+- Krab Krabiewicz dodany jako 10. postać cyklu,
+- warstwa CSS premium: szkło, mocniejsze karty, zwarty landing i bogatsze sekcje,
 - zachowane 56 pełnych historii, 59 bohaterów Atlasu i 36 rekwizytów Kreatora.
 
 ## Pakiet wdrożeniowy
 Google Drive file ID: `1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q`
-SHA256: `eea5b1357d6d0f202f3506beac3135ccc92c7bb0fd7d82c22ef9d0c8c40b2fea`
-Bytes: `29595590`
+SHA256: `f50e56ff3f5162a22ace82aa5729bf9837371bd60769d13392cd0002e88fa43e`
+Bytes: `20332188`
 
-## QA lokalne
+Pakiet deploy został odchudzony wyłącznie o nieużywane runtime `assets/characters/sourcecards`; wszystkie zasoby rzeczywiście referencjonowane przez stronę pozostały.
+
+## QA
 - `python scripts/validate.py` — OK
 - `node --check js/app.js` — OK
+- 170 unikalnych odwołań do assetów sprawdzone
+- brakujące assety: 0
 - 56 historii
 - 59 postaci Atlasu
 - 10 postaci cyklu
 - 12 pinów mapy
-- 36 rekwizytów Kreatora
+- 36 rekwizytów
+- Vercel Preview — SUCCESS
 
-Ta gałąź jest przeznaczona do Vercel Preview. Produkcyjny `main` pozostaje bez zmian do akceptacji wyglądu.
+## Plik do pobrania
+`Dorszolandia_v22_PREMIUM_FINAL.zip` został zapisany w folderze Drive v22 Premium.
+
+Status: gotowe do produkcji.
