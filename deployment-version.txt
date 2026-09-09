@@ -1,0 +1,5 @@
+Dorszolandia v17.2 Production Premium
+Source: Google Drive file 1vjqykLE1kifl9kpxuRDhq9IsPBr8PHaZ
+Expected bytes: 5888402
+SHA256: 26afe445dea56b844fd84420f5187750da49bd289536e0bdda23461318970aa7
+Deployment pipeline: GitHub main -> Vercel production
