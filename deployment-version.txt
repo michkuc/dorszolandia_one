@@ -1,8 +1,8 @@
-Dorszolandia v23.1 PREMIUM MULTIPAGE QA
+Dorszolandia v23.1.1 PREMIUM MULTIPAGE FINAL
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 9978204
-Package SHA256: 96651c3c85c1b19113d98148610907e7fb8bbfcc0e206cee1c54852bffae8b6a
-Build version: v23.1-premium-multipage-qa-production
+Package bytes: 9978991
+Package SHA256: 8fe783079a2525121c106653e035f975ddde8d25a5725b32622cc30865094f70
+Build version: v23.1.1-premium-multipage-final-production
 Architecture: 11 independent pages with clean URLs
 Stories: 56 pełnych historii z MASTER FINAL
 Atlas: 59 nazwanych postaci z Atlasu v3
@@ -10,6 +10,6 @@ Story characters: 10
 Premium map: 12 widocznych nazwanych miejsc
 Creator: 36 rekwizytów
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: validate.py OK; app.js syntax OK; single H1 on 11/11 pages; clean internal routes; mobile dock fixed; creator mobile overflow fixed in CSS; OG/Twitter image metadata added; page-specific data bundles; 6 material graphics optimized to WebP; missing assets 0
-Vercel Production: SUCCESS on deployment commit 576c1d89dbf7288a165b607311f6c4afe8d4f140
+Final polish: Smart Fit desktop overflow fixed; Smart Fit badge mobile fit; map mobile chips 2x2; FINAL_QA normalized
+QA: validate.py OK; app.js syntax OK; single H1 on 11/11 pages; clean internal routes; missing HTML assets 0; creator props 36; map pins 12
 Pipeline: main -> Vercel production
