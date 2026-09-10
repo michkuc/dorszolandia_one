@@ -1,18 +1,24 @@
-Dorszolandia v24.11 PREMIUM — RESIDENT FILTER + TATA DORSZ
+Dorszolandia v24.12 PREMIUM — 12 KRAIN / 12 OPOWIEŚCI
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Package bytes: 24696211
-Package SHA256: 8dcd18938bb9cda40c0a61ef0f0d414a51530d89099d86a88f47e1bad25ca6ce
-Build version: v24.11-resident-filter-tata-dorsz-production
+Package bytes: 24838844
+Package SHA256: 4e0214cca8d26387327a76c6e103ecdc7796f8c05b882fd3c485fdb0bd1b04a2
+Build version: v24.12-story-worlds-production
 Architecture: 11 independent pages with clean URLs
-Residents: canonical Atlas 59 + special Tata Dorsz at end
-Resident filters: fixed 8/8 buttons; explicit display:none + aria-pressed; browser DOM test PASS
-Filter counts: all 60 / court 4 / magic 4 / craft 3 / guards 7 / city 24 / new roles 8 / sport 9
-Tata Dorsz: user-provided image normalized to 384x384; no description, no role, no story hook; visible only under Wszyscy
-Map: v24.10 12/12 life-scene gallery retained
-Creator: v24.9 51 props / 31 Drive-HQ retained
-Piosenki: 3 premium covers; Song 2 and Song 3 browser-safe MP3; full video retained
-Public UI world naming: Dorszolandia only
+Stories: completely new active cycle — 12 map worlds = 12 stories
+Full stories: 4
+Placeholders: 8
+Full sequence: Afera z Pęcherzykiem -> Księżniczka Algorytma -> Algoria Powraca -> Operacja Koralowy Kosmos
+Full texts: source-verified, full 1:1 content; only technical reader formatting changed
+Koralowy Kosmos: full 5 chapters
+Covers: 4 user-supplied story covers + 8 map-life scene images
+Map integration: each of 12 places links to its assigned story slot; story reader links back to exact map place
+Deep links: /przygody?story=<slug> and /mapa?miejsce=<slug>
+Old 56-story and Atlas-story UI/data: removed from active Przygody section
+Residents: 60 including Tata Dorsz retained; filters retained
+Creator: 51 props retained
+Piosenki: 3 premium covers/audio + full video retained
+Public UI world naming: Dorszolandia only; historical wording inside verified 1:1 source stories is preserved as source text
 Shop state: PLAN ONLY; prices none; sales disabled
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: validate.py OK; app.js syntax OK; filter functional DOM test PASS
+QA: stories 12; full 4; placeholders 8; worlds unique 12; map links 12/12; old active story cycles 0; missing assets 0; validate.py OK; app.js syntax OK
 Pipeline: main -> Vercel production
