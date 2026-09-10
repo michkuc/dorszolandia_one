@@ -1,7 +1,7 @@
 Dorszolandia v24.12 PREMIUM — 12 KRAIN / 12 OPOWIEŚCI
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Package bytes: 26488061
-Package SHA256: 881143eea25cecc4649846494e29feb35cf7528bd359c1797b374104dc28fa26
+Package bytes: 26478233
+Package SHA256: 3cc2d7565e9134168027e62397d7200affec8c67b45571378e78e86fcea251d5
 Build version: v24.12-story-worlds-final
 Architecture: 11 independent pages with clean URLs
 Stories: completely new active cycle — 12 map worlds = 12 story slots
