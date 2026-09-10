@@ -6,8 +6,8 @@ import crypto from 'node:crypto';
 const BUILD_VERSION = 'v24.4-premium-multimedia-production';
 const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '04ccc4da8e18af5e2852033c77bc80556520e95da090faedca821155536e043b';
-const EXPECTED_BYTES = 79621930;
+const EXPECTED_SHA256 = '643c0a36645cd9f53496d77790ed40058b5b50b82ee49c09a7249db7b4954a32';
+const EXPECTED_BYTES = 44807483;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
@@ -98,6 +98,7 @@ fs.writeFileSync('dist/vercel-build.txt', [
   `Architecture multipage`,
   `Top navigation includes Piosenki`,
   `Full teledysk + 3 songs`,
+  `Video optimized for web at full duration`,
   `Public UI naming Dorszolandia only`,
   `Built ${new Date().toISOString()}`,
   ''
