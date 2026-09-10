@@ -1,16 +1,17 @@
-Dorszolandia v24.4 PREMIUM MULTIMEDIA
+Dorszolandia v24.5 PREMIUM PIOSENKI
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 19899158
-Package SHA256: 90d16df6fb71f0c0a4559c57e98186fd73599aa64da20be039b668e4bb5e72f9
-Build version: v24.4-premium-multimedia-production
+Package bytes: 21088609
+Package SHA256: c312a99f0e7c1f591c051c6dbbd585d04ed4051cecb04168267914cf5395cb22
+Build version: v24.5-premium-piosenki-production
 Architecture: 11 independent pages with clean URLs
 Top navigation: Piosenki -> /piosenka on all pages
-Full music video: full 81.711 s version streamed from Google Drive multimedia
+Song covers: 3 dedicated premium graphics for tracks 1, 2 and 3
+Full music video: full version streamed from Google Drive multimedia
 Song 1: existing original Dorszolandia song
-Song 2: Dorszolandia 2.1.mp3
-Song 3: Dorszolandia 3. 1.mp3
+Song 2: Dorszolandia 2.1, normalized MP3 192 kbps / 44.1 kHz stereo
+Song 3: Dorszolandia 3.1, re-encoded browser-safe MP3 192 kbps / 44.1 kHz stereo
 Public UI world naming: Dorszolandia only
 Shop state: PLAN ONLY; prices none; sales disabled
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: 11/11 pages with top Piosenki link; full Drive teledysk; 3 audio players; missing local assets 0; public HTML Neptunopol 0
+QA: validate.py OK; app.js syntax OK; 3 audio files decode fully with ffmpeg; missing local assets 0; public HTML Neptunopol 0
 Pipeline: main -> Vercel production
