@@ -3,29 +3,27 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const BUILD_VERSION = 'v23.1.1-premium-multipage-final-production';
+const BUILD_VERSION = 'v24-premium-visual-redesign-production';
 const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '8fe783079a2525121c106653e035f975ddde8d25a5725b32622cc30865094f70';
-const EXPECTED_BYTES = 9978991;
+const EXPECTED_SHA256 = 'bddae2d630e4d925280101351c3f48daa53c01491feb0332647d62c80e2fbba6';
+const EXPECTED_BYTES = 12033238;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
 const packed = Buffer.from(await response.arrayBuffer());
 const sha = crypto.createHash('sha256').update(packed).digest('hex');
-if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v23.1.1 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
-if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v23.1.1 nie zgadza się: ${sha}`);
+if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v24 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
+if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v24 nie zgadza się: ${sha}`);
 
 const tar = zlib.gunzipSync(packed);
 fs.rmSync('dist', { recursive: true, force: true });
 fs.mkdirSync('dist', { recursive: true });
-
 const readString = (buf, start, len) => buf.subarray(start, start + len).toString('utf8').replace(/\0.*$/s, '');
 const readOctal = (buf, start, len) => {
   const s = readString(buf, start, len).trim().replace(/\0/g, '');
   return s ? parseInt(s, 8) : 0;
 };
-
 let offset = 0;
 let files = 0;
 while (offset + 512 <= tar.length) {
@@ -43,9 +41,8 @@ while (offset + 512 <= tar.length) {
     throw new Error(`Niebezpieczna ścieżka TAR: ${rawName}`);
   }
   const target = path.join('dist', ...normalized.split('/'));
-  if (type === '5') {
-    fs.mkdirSync(target, { recursive: true });
-  } else if (type === '0' || type === '\0') {
+  if (type === '5') fs.mkdirSync(target, { recursive: true });
+  else if (type === '0' || type === '\0') {
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, tar.subarray(offset, offset + size));
     files++;
@@ -53,12 +50,12 @@ while (offset + 512 <= tar.length) {
   offset += Math.ceil(size / 512) * 512;
 }
 
-if (!fs.existsSync('dist/index.html')) throw new Error('Brak dist/index.html po rozpakowaniu v23.1.1.');
+const requiredPages = ['index.html','mapa.html','mieszkancy.html','dorszopedia.html','przygody.html','gry.html','kreator.html','materialy.html','sklep.html','piosenka.html','kontakt.html'];
+for (const page of requiredPages) if (!fs.existsSync(path.join('dist', page))) throw new Error(`Brak podstrony ${page}`);
 const html = fs.readFileSync('dist/index.html', 'utf8');
-if (!html.includes('v23.1.1 premium multipage FINAL')) throw new Error('index.html nie ma markera v23.1.1 Premium Multipage FINAL.');
-for (const page of ['mapa.html','mieszkancy.html','dorszopedia.html','przygody.html','gry.html','kreator.html','materialy.html','sklep.html','piosenka.html','kontakt.html']) {
-  if (!fs.existsSync(path.join('dist', page))) throw new Error(`Brak podstrony ${page}`);
-}
+if (!html.includes('v24 premium visual redesign')) throw new Error('index.html nie ma markera v24 premium visual redesign.');
+const premiumAssets = ['hero-home.webp','hero-world.webp','hero-bohaterowie.webp','hero-opowiesci.webp','hero-dorszopedia.webp','hero-gry.webp','hero-kreator.webp','hero-sklep.webp'];
+for (const asset of premiumAssets) if (!fs.existsSync(path.join('dist','assets','premium',asset))) throw new Error(`Brak premium asset ${asset}`);
 fs.writeFileSync('dist/vercel-build.txt', [
   `Dorszolandia ${BUILD_VERSION}`,
   `Drive package ${FILE_ID}`,
@@ -66,9 +63,8 @@ fs.writeFileSync('dist/vercel-build.txt', [
   `Package SHA256 ${sha}`,
   `Extracted files ${files}`,
   `Architecture multipage`,
-  `Final polish Smart Fit + map mobile chips 2x2 + normalized QA`,
+  `Premium artwork integrated into home and subpages`,
   `Built ${new Date().toISOString()}`,
   ''
 ].join('\n'));
-
 console.log(`Dorszolandia ${BUILD_VERSION}: ${files} plików · ${packed.length} B · ${sha}`);
