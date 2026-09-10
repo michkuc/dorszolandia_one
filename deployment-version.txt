@@ -1,26 +1,18 @@
-Dorszolandia v24.10 PREMIUM MAP LIFE GALLERY
+Dorszolandia v24.11 PREMIUM — RESIDENT FILTER + TATA DORSZ
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Package bytes: 24668589
-Package SHA256: 8fc202931aea9d799b132337169a6137c0084fd49849868abbca96c6391663e9
-Build version: v24.10-map-life-production
+Package bytes: 24696211
+Package SHA256: 8dcd18938bb9cda40c0a61ef0f0d414a51530d89099d86a88f47e1bad25ca6ce
+Build version: v24.11-resident-filter-tata-dorsz-production
 Architecture: 11 independent pages with clean URLs
-Map: 12/12 miejsc po kliknięciu otwiera dopasowaną scenę życia Dorszy
-Map life assets: 12 lokalnych WebP z folderu Google Drive użytkownika
-Map image optimization: 960x720 WebP, pakiet utrzymany poniżej limitu bezpośredniego pobierania Drive
-Map gallery: modal premium + poprzednie/następne + obsługa telefonu i klawiatury
-Map cards: kafelki miejsc pod mapą również otwierają odpowiednią scenę
-Creator: 51 rekwizytów
-Creator naming: imię Dorsza widoczne na planszy i w eksporcie PNG
-Mirror controls: selected prop / fish / whole composition
-Save/load: preserves name, mirror state and props
-Drive/HQ active props: 31
-Removed weak active asset: Gitara
-Active duplicate names: 0
-Active duplicate asset paths: 0
-Residents: 59 normalized Atlas icons retained
+Residents: canonical Atlas 59 + special Tata Dorsz at end
+Resident filters: fixed 8/8 buttons; explicit display:none + aria-pressed; browser DOM test PASS
+Filter counts: all 60 / court 4 / magic 4 / craft 3 / guards 7 / city 24 / new roles 8 / sport 9
+Tata Dorsz: user-provided image normalized to 384x384; no description, no role, no story hook; visible only under Wszyscy
+Map: v24.10 12/12 life-scene gallery retained
+Creator: v24.9 51 props / 31 Drive-HQ retained
 Piosenki: 3 premium covers; Song 2 and Song 3 browser-safe MP3; full video retained
 Public UI world naming: Dorszolandia only
 Shop state: PLAN ONLY; prices none; sales disabled
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: 12 map pins; 12 map cards; 12 life assets; missing assets 0; validate.py OK; app.js syntax OK
+QA: validate.py OK; app.js syntax OK; filter functional DOM test PASS
 Pipeline: main -> Vercel production
