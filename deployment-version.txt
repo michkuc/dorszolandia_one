@@ -1,16 +1,16 @@
 Dorszolandia v24.4 PREMIUM MULTIMEDIA
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 79621930
-Package SHA256: 04ccc4da8e18af5e2852033c77bc80556520e95da090faedca821155536e043b
+Package bytes: 44807483
+Package SHA256: 643c0a36645cd9f53496d77790ed40058b5b50b82ee49c09a7249db7b4954a32
 Build version: v24.4-premium-multimedia-production
 Architecture: 11 independent pages with clean URLs
 Top navigation: Piosenki -> /piosenka on all pages
-Full music video: Kopia DORSZOLANDIA.mp4
+Full music video: full 81.711 s duration, web-optimized 1280x720 MP4
 Song 1: existing original Dorszolandia song
 Song 2: Dorszolandia 2.1.mp3
 Song 3: Dorszolandia 3. 1.mp3
 Public UI world naming: Dorszolandia only
 Shop state: PLAN ONLY; prices none; sales disabled
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: 11/11 pages with top Piosenki link; 1 video; 3 audio players; missing local assets 0; public HTML Neptunopol 0
+QA: 11/11 pages with top Piosenki link; 1 full video; 3 audio players; missing local assets 0; public HTML Neptunopol 0
 Pipeline: main -> Vercel production
