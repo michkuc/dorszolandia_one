@@ -1,7 +1,7 @@
 Dorszolandia v24.12 PREMIUM — 12 KRAIN / 12 OPOWIEŚCI
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Package bytes: 26478233
-Package SHA256: 3cc2d7565e9134168027e62397d7200affec8c67b45571378e78e86fcea251d5
+Current Drive package bytes: 23828797
+Current Drive package SHA256: 7cd8706f51993ae413d311f39f897174ab947559dbeb2dd44772b8cf73ff225f
 Build version: v24.12-story-worlds-final
 Architecture: 11 independent pages with clean URLs
 Stories: completely new active cycle — 12 map worlds = 12 story slots
@@ -20,5 +20,6 @@ Creator: 51 props; naming and mirror controls retained
 Piosenki: 3 premium covers/audio + full video retained
 Shop state: PLAN ONLY; no prices, checkout or payments
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: 12 story slots; full 7; placeholders 5; Tom I 3; classic 4; map links 12/12; old active story cycles 0; required story graphics present; build validation passed locally against the exact Drive package
+QA: 12 story slots; full 7; placeholders 5; Tom I 3; classic 4; map links 12/12; old active story cycles 0; required story graphics present; current Drive package re-fetched and inspected successfully
+Deployment retry: final Drive package stabilized and re-verified
 Pipeline: GitHub main -> Vercel production
