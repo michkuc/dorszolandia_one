@@ -3,18 +3,18 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const BUILD_VERSION = 'v24.4-premium-multimedia-production';
+const BUILD_VERSION = 'v24.5-premium-piosenki-production';
 const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '90d16df6fb71f0c0a4559c57e98186fd73599aa64da20be039b668e4bb5e72f9';
-const EXPECTED_BYTES = 19899158;
+const EXPECTED_SHA256 = 'c312a99f0e7c1f591c051c6dbbd585d04ed4051cecb04168267914cf5395cb22';
+const EXPECTED_BYTES = 21088609;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
 const packed = Buffer.from(await response.arrayBuffer());
 const sha = crypto.createHash('sha256').update(packed).digest('hex');
-if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v24.4 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
-if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v24.4 nie zgadza się: ${sha}`);
+if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v24.5 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
+if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v24.5 nie zgadza się: ${sha}`);
 
 const tar = zlib.gunzipSync(packed);
 fs.rmSync('dist', { recursive: true, force: true });
@@ -64,7 +64,7 @@ for (const page of requiredPages) {
 }
 
 const piosenkaHtml = fs.readFileSync('dist/piosenka.html', 'utf8');
-if (!piosenkaHtml.includes('v24.4 premium multimedia')) throw new Error('piosenka.html nie ma markera v24.4.');
+if (!piosenkaHtml.includes('v24.5 piosenki covers audio fix')) throw new Error('piosenka.html nie ma markera v24.5.');
 if (!piosenkaHtml.includes('1QgHjP-gKDzkvbIvv-PpvE94QlFRrj_cu/preview')) throw new Error('Brak pełnego teledysku Google Drive na stronie Piosenki.');
 if (!piosenkaHtml.includes('dorszolandia-piosenka-2.mp3')) throw new Error('Brak Piosenki 2.');
 if (!piosenkaHtml.includes('dorszolandia-piosenka-3.mp3')) throw new Error('Brak Piosenki 3.');
@@ -84,6 +84,11 @@ for (const asset of mediaAssets) {
   if (!fs.existsSync(path.join('dist','assets','media',asset))) throw new Error(`Brak multimedia ${asset}`);
 }
 
+const coverAssets = ['piosenka-1.webp','piosenka-2.webp','piosenka-3.webp'];
+for (const asset of coverAssets) {
+  if (!fs.existsSync(path.join('dist','assets','media','covers',asset))) throw new Error(`Brak okładki piosenki ${asset}`);
+}
+
 const shopHtml = fs.readFileSync('dist/sklep.html', 'utf8');
 if (/\d+,\d{2}\s*zł|\d+\s*zł/i.test(shopHtml)) throw new Error('Sklep nie może zawierać cen.');
 
@@ -96,6 +101,8 @@ fs.writeFileSync('dist/vercel-build.txt', [
   `Architecture multipage`,
   `Top navigation includes Piosenki`,
   `Full teledysk streamed from Google Drive + 3 songs`,
+  `Three dedicated premium song cover graphics`,
+  `Songs 2 and 3 normalized to browser-safe MP3`,
   `Public UI naming Dorszolandia only`,
   `Built ${new Date().toISOString()}`,
   ''
