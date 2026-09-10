@@ -1,17 +1,16 @@
-Dorszolandia v24.5 PREMIUM PIOSENKI
+Dorszolandia v24.6 PREMIUM ATLAS ICONS
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 21088609
-Package SHA256: c312a99f0e7c1f591c051c6dbbd585d04ed4051cecb04168267914cf5395cb22
-Build version: v24.5-premium-piosenki-production
+Package bytes: 21462403
+Package SHA256: 7ac5615b251211997225977026dc038b30f994d84788a3e24b9ff2d291531600
+Build version: v24.6-premium-atlas-icons-production
 Architecture: 11 independent pages with clean URLs
-Top navigation: Piosenki -> /piosenka on all pages
-Song covers: 3 dedicated premium graphics for tracks 1, 2 and 3
-Full music video: full version streamed from Google Drive multimedia
-Song 1: existing original Dorszolandia song
-Song 2: Dorszolandia 2.1, normalized MP3 192 kbps / 44.1 kHz stereo
-Song 3: Dorszolandia 3.1, re-encoded browser-safe MP3 192 kbps / 44.1 kHz stereo
+Residents: 59 Atlas icons normalized to 384x384 transparent canvases
+Visible icon scale: equalized to 292 px max dimension across all 59 icons
+Embedded source caption fragments removed from affected icons: Strażak, Komisarz, Nauczyciel, Kucharz, Kapitan
+Mobile/desktop Atlas viewport: consistent centered sizing
+Piosenki: 3 dedicated premium covers; Song 2 and Song 3 browser-safe MP3; full video retained
 Public UI world naming: Dorszolandia only
 Shop state: PLAN ONLY; prices none; sales disabled
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: validate.py OK; app.js syntax OK; 3 audio files decode fully with ffmpeg; missing local assets 0; public HTML Neptunopol 0
+QA: 59/59 icons normalized; all 384x384; visible max dimension 292/292; missing local assets 0; validate.py OK; app.js syntax OK
 Pipeline: main -> Vercel production
