@@ -1,25 +1,22 @@
-Dorszolandia v24.12 PREMIUM — 12 KRAIN / 12 OPOWIEŚCI
+Dorszolandia v24.13 PREMIUM — RESIDENTS / STORY CHARACTERS CLEANUP
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Current Drive package bytes: 23828797
-Current Drive package SHA256: 7cd8706f51993ae413d311f39f897174ab947559dbeb2dd44772b8cf73ff225f
-Build version: v24.12-story-worlds-final
+Current Drive package bytes: 27115073
+Current Drive package SHA256: 4bebc51a1b949af63244a0b06c2351defac908d92f79aee2d6579832dde02c5c
+Build version: v24.13-residents-story-clean
 Architecture: 11 independent pages with clean URLs
-Stories: completely new active cycle — 12 map worlds = 12 story slots
-Full stories: 7
-Placeholders: 5
+Residents: Atlas 59 + Tata Dorsz; filters retained
+Residents layout: duplicate top section “Dorszuś, Borys i bohaterowie Dorszolandii” removed
+Residents order: “Mieszkańcy miasta i Dwór Koralu” first; “Postacie z opowiadań” moved below the resident atlas
+Verified story characters shown: Dorszuś; Borys; Król Dorsz; Bąbel Maksymalny; Krab Szczękacz; Algoria
+Removed from story-character section because no occurrence was found in the current 7 full stories: Krebsław Zasięgowy; Krab Krabiewicz; Pani Świecikora; Zipperius Maximus
+Story character artwork: 6 normalized 500x500 assets; active UI no longer uses the bad integrated-label crops for Król Dorsz, Bąbel Maksymalny and Algoria
+Stories: 12 map worlds = 12 story slots; 7 full; 5 placeholders
 Tom I full: Zatoka Tajemnic; Las Wodorostów; Królewski Dwór
 Classic full sequence: Afera z Pęcherzykiem -> Księżniczka Algorytma -> Algoria Powraca -> Operacja Koralowy Kosmos
-Full texts: source-verified; source wording preserved inside the stories
-Koralowy Kosmos: full 5 numbered chapters plus source title/appendix blocks
-Story illustrations: each story uses its assigned map-life world scene; four classic stories also retain supplied poster art inside the reader
 Map integration: all 12 places link to their assigned story slot
-Deep links: hash-based /przygody#story-<id>; map dialog uses data-story-href and mapLifeStory
-Old 56-story and Atlas-story active UI/data: removed
-Residents: 60 including Tata Dorsz; filters retained
 Creator: 51 props; naming and mirror controls retained
-Piosenki: 3 premium covers/audio + full video retained
+Piosenki: 3 audio tracks + full video retained
 Shop state: PLAN ONLY; no prices, checkout or payments
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: 12 story slots; full 7; placeholders 5; Tom I 3; classic 4; map links 12/12; old active story cycles 0; required story graphics present; current Drive package re-fetched and inspected successfully
-Deployment retry: final Drive package stabilized and re-verified
+QA: duplicate section removed; residents before story characters; 6 verified story-character cards; 7 full / 5 placeholders; map links retained
 Pipeline: GitHub main -> Vercel production
