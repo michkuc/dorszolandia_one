@@ -1,17 +1,19 @@
-Dorszolandia v24.1 PREMIUM SHOP POLISH
+Dorszolandia v24.2 PREMIUM SHOP PRODUCTS
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 12037429
-Package SHA256: 0991cca1068b284e94c7eefe0789ae2e7e990894141e19faeedad8120f1b868d
-Build version: v24.1-premium-shop-polish-production
+Package bytes: 12154643
+Package SHA256: 4b900b05fee126eb5c80e01cf42556eaed11bef64415ec60eb600e14fb047457
+Build version: v24.2-premium-shop-products-production
 Architecture: 11 independent pages with clean URLs
 Premium artwork: user supplied Dorszolandia visuals integrated into home, residents, stories, Dorszopedia, games, creator and shop
-Shop v24.1: premium planned-store layout; 8 category filters; 6 concept product cards; benefits strip; bundle-plan; local wishlist; launch-interest CTA
-Shop sales state: PLAN ONLY — no payments, no orders, no active cart
+Shop v24.2: exact six product concepts from the supplied shop reference are now used as product visuals
+Products: Książka „Wielkie przygody”; Plecak Dorszolandia; Kubek Dorszolandia; Maskotka Dorsz; Koszulka Dorszolandia; Plakat Neptunopol
+Reference prices: 34,99 / 119,99 / 39,99 / 79,99 / 69,99 / 29,99 zł — shown only as orientational prices from the mockup
+Shop sales state: PLAN ONLY — no payments, no orders, no checkout
 Stories: 56 pełnych historii z MASTER FINAL
 Atlas: 59 nazwanych postaci z Atlasu v3
 Story characters: 10
 Premium map: 12 widocznych nazwanych miejsc
 Creator: 36 rekwizytów
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: validate.py OK; app.js syntax OK; shop 1 H1; 0 missing local shop assets
+QA: validate.py OK; app.js syntax OK; shop product cards 6; product images 6; missing local assets 0
 Pipeline: main -> Vercel production
