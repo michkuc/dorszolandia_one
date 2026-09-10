@@ -6,8 +6,8 @@ import crypto from 'node:crypto';
 const BUILD_VERSION = 'v24.4-premium-multimedia-production';
 const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '643c0a36645cd9f53496d77790ed40058b5b50b82ee49c09a7249db7b4954a32';
-const EXPECTED_BYTES = 44807483;
+const EXPECTED_SHA256 = '90d16df6fb71f0c0a4559c57e98186fd73599aa64da20be039b668e4bb5e72f9';
+const EXPECTED_BYTES = 19899158;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
@@ -65,7 +65,7 @@ for (const page of requiredPages) {
 
 const piosenkaHtml = fs.readFileSync('dist/piosenka.html', 'utf8');
 if (!piosenkaHtml.includes('v24.4 premium multimedia')) throw new Error('piosenka.html nie ma markera v24.4.');
-if (!piosenkaHtml.includes('teledysk-dorszolandia.mp4')) throw new Error('Brak pełnego teledysku na stronie Piosenki.');
+if (!piosenkaHtml.includes('1QgHjP-gKDzkvbIvv-PpvE94QlFRrj_cu/preview')) throw new Error('Brak pełnego teledysku Google Drive na stronie Piosenki.');
 if (!piosenkaHtml.includes('dorszolandia-piosenka-2.mp3')) throw new Error('Brak Piosenki 2.');
 if (!piosenkaHtml.includes('dorszolandia-piosenka-3.mp3')) throw new Error('Brak Piosenki 3.');
 
@@ -76,8 +76,6 @@ for (const page of requiredPages) {
 }
 
 const mediaAssets = [
-  'teledysk-dorszolandia.mp4',
-  'teledysk-dorszolandia-poster.jpg',
   'piosenka-dorszolandia.m4a',
   'dorszolandia-piosenka-2.mp3',
   'dorszolandia-piosenka-3.mp3'
@@ -97,8 +95,7 @@ fs.writeFileSync('dist/vercel-build.txt', [
   `Extracted files ${files}`,
   `Architecture multipage`,
   `Top navigation includes Piosenki`,
-  `Full teledysk + 3 songs`,
-  `Video optimized for web at full duration`,
+  `Full teledysk streamed from Google Drive + 3 songs`,
   `Public UI naming Dorszolandia only`,
   `Built ${new Date().toISOString()}`,
   ''
