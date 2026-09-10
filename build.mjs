@@ -4,10 +4,10 @@ import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
 const BUILD_VERSION = 'v24.10-map-life-production';
-const FILE_ID = '1g3vW60OyjTPsPfFr-Npu8UIeutsftCyD';
+const FILE_ID = '1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '79161356896190b55a2c071e23291fba218f6f0745cc3639f4fe34c06f9e9324';
-const EXPECTED_BYTES = 26637678;
+const EXPECTED_SHA256 = '8fc202931aea9d799b132337169a6137c0084fd49849868abbca96c6391663e9';
+const EXPECTED_BYTES = 24668589;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
