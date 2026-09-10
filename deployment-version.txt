@@ -1,16 +1,19 @@
-Dorszolandia v24.6 PREMIUM ATLAS ICONS
+Dorszolandia v24.7 PREMIUM CREATOR PRO
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 21462403
-Package SHA256: 7ac5615b251211997225977026dc038b30f994d84788a3e24b9ff2d291531600
-Build version: v24.6-premium-atlas-icons-production
+Package bytes: 21748089
+Package SHA256: af332d5c1ddd51af4b3db011f02fdb2e72c9c59f018332fdaa36fa9a3f476a96
+Build version: v24.7-premium-creator-pro-production
 Architecture: 11 independent pages with clean URLs
-Residents: 59 Atlas icons normalized to 384x384 transparent canvases
-Visible icon scale: equalized to 292 px max dimension across all 59 icons
-Embedded source caption fragments removed from affected icons: Strażak, Komisarz, Nauczyciel, Kucharz, Kapitan
-Mobile/desktop Atlas viewport: consistent centered sizing
-Piosenki: 3 dedicated premium covers; Song 2 and Song 3 browser-safe MP3; full video retained
+Creator: 43 rekwizyty
+Creator naming: imię Dorsza widoczne na planszy i w eksporcie PNG
+Mirror controls: selected prop / fish / whole composition
+Save/load: preserves name, mirror state and props; legacy slot data still supported
+New or upgraded Drive HQ props: Berło królewskie, Kapelusz czarodzieja, Pergamin, Latarenka, Kordelas piracki, Włócznia, Kołczan, Topór bojowy
+Drive sources: 02_MASTER_REKWIZYTY + rekwizyty_zrob dorsza
+Residents: 59 normalized Atlas icons retained
+Piosenki: 3 premium covers; Song 2 and Song 3 browser-safe MP3; full video retained
 Public UI world naming: Dorszolandia only
 Shop state: PLAN ONLY; prices none; sales disabled
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: 59/59 icons normalized; all 384x384; visible max dimension 292/292; missing local assets 0; validate.py OK; app.js syntax OK
+QA: 43 props; 22 Drive-sourced props; missing local assets 0; validate.py OK; app.js syntax OK
 Pipeline: main -> Vercel production
