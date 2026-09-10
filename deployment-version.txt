@@ -1,7 +1,8 @@
 Dorszolandia v24.13 PREMIUM — RESIDENTS / STORY CHARACTERS CLEANUP
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Current Drive package bytes: 27115073
-Current Drive package SHA256: 4bebc51a1b949af63244a0b06c2351defac908d92f79aee2d6579832dde02c5c
+Current Drive package: Dorszolandia_v24_13_VERCEL_READY.tar.gz
+Current Drive package bytes: 24533535
+Current Drive package SHA256: fbe2a51a8e340189c5e433d3900c95321aa76c86e5d68366be30cb6c11e0c8fa
 Build version: v24.13-residents-story-clean
 Architecture: 11 independent pages with clean URLs
 Residents: Atlas 59 + Tata Dorsz; filters retained
@@ -18,5 +19,6 @@ Creator: 51 props; naming and mirror controls retained
 Piosenki: 3 audio tracks + full video retained
 Shop state: PLAN ONLY; no prices, checkout or payments
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
+Deployment package slimmed below 25 MB to avoid large-file download interstitials in Vercel build.
 QA: duplicate section removed; residents before story characters; 6 verified story-character cards; 7 full / 5 placeholders; map links retained
 Pipeline: GitHub main -> Vercel production
