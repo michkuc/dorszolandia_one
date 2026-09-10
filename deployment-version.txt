@@ -1,11 +1,12 @@
 Dorszolandia v24.10 PREMIUM MAP LIFE GALLERY
-Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 26637678
-Package SHA256: 79161356896190b55a2c071e23291fba218f6f0745cc3639f4fe34c06f9e9324
+Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
+Package bytes: 24668589
+Package SHA256: 8fc202931aea9d799b132337169a6137c0084fd49849868abbca96c6391663e9
 Build version: v24.10-map-life-production
 Architecture: 11 independent pages with clean URLs
 Map: 12/12 miejsc po kliknięciu otwiera dopasowaną scenę życia Dorszy
 Map life assets: 12 lokalnych WebP z folderu Google Drive użytkownika
+Map image optimization: 960x720 WebP, pakiet utrzymany poniżej limitu bezpośredniego pobierania Drive
 Map gallery: modal premium + poprzednie/następne + obsługa telefonu i klawiatury
 Map cards: kafelki miejsc pod mapą również otwierają odpowiednią scenę
 Creator: 51 rekwizytów
