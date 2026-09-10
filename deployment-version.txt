@@ -1,24 +1,25 @@
-Dorszolandia v24.9 PREMIUM CREATOR HQ PROPS FINAL
+Dorszolandia v24.10 PREMIUM MAP LIFE GALLERY
 Drive deploy package: 1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q
-Package bytes: 22254268
-Package SHA256: 5ffdcbb66405a8ef54c4542bf393a3ae8ad00f1f0c625282cd85e1bef466be67
-Build version: v24.9-creator-hq-props-production
+Package bytes: 26637678
+Package SHA256: 79161356896190b55a2c071e23291fba218f6f0745cc3639f4fe34c06f9e9324
+Build version: v24.10-map-life-production
 Architecture: 11 independent pages with clean URLs
+Map: 12/12 miejsc po kliknięciu otwiera dopasowaną scenę życia Dorszy
+Map life assets: 12 lokalnych WebP z folderu Google Drive użytkownika
+Map gallery: modal premium + poprzednie/następne + obsługa telefonu i klawiatury
+Map cards: kafelki miejsc pod mapą również otwierają odpowiednią scenę
 Creator: 51 rekwizytów
 Creator naming: imię Dorsza widoczne na planszy i w eksporcie PNG
 Mirror controls: selected prop / fish / whole composition
 Save/load: preserves name, mirror state and props
 Drive/HQ active props: 31
-New HQ props from rekwizyty folder: Skrzynia skarbów, Czapka pilota, Czapka kapitana, Bęben, Kapelusz pirata, Kask strażacki, Czapka detektywa, Luneta, Mapa skarbów
 Removed weak active asset: Gitara
-Removed dead duplicate files: kapelusz-czarodzieja.svg, hem-rycerski.svg, korona.svg, miecz.svg, tarcza.svg, gitara.svg
 Active duplicate names: 0
 Active duplicate asset paths: 0
-Remaining simple SVGs kept only where no direct HQ replacement was confirmed
 Residents: 59 normalized Atlas icons retained
 Piosenki: 3 premium covers; Song 2 and Song 3 browser-safe MP3; full video retained
 Public UI world naming: Dorszolandia only
 Shop state: PLAN ONLY; prices none; sales disabled
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-QA: 51 props; 31 Drive/HQ props; missing active assets 0; exact binary duplicates 0; validate.py OK; app.js syntax OK
+QA: 12 map pins; 12 map cards; 12 life assets; missing assets 0; validate.py OK; app.js syntax OK
 Pipeline: main -> Vercel production
