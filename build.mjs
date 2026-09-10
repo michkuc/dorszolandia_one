@@ -3,18 +3,18 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const BUILD_VERSION = 'v24.11-resident-filter-tata-dorsz-production';
+const BUILD_VERSION = 'v24.12-story-worlds-production';
 const FILE_ID = '1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '8dcd18938bb9cda40c0a61ef0f0d414a51530d89099d86a88f47e1bad25ca6ce';
-const EXPECTED_BYTES = 24696211;
+const EXPECTED_SHA256 = '4e0214cca8d26387327a76c6e103ecdc7796f8c05b882fd3c485fdb0bd1b04a2';
+const EXPECTED_BYTES = 24838844;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
 const packed = Buffer.from(await response.arrayBuffer());
 const sha = crypto.createHash('sha256').update(packed).digest('hex');
-if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v24.11 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
-if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v24.11 nie zgadza się: ${sha}`);
+if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v24.12 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
+if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v24.12 nie zgadza się: ${sha}`);
 
 const tar = zlib.gunzipSync(packed);
 fs.rmSync('dist', { recursive: true, force: true });
@@ -59,45 +59,57 @@ for (const page of requiredPages) {
   if (/neptunopol/i.test(html)) throw new Error(`Publiczny UI zawiera Neptunopol: ${page}`);
 }
 
-const creatorHtml = fs.readFileSync('dist/kreator.html', 'utf8');
+const appJs = fs.readFileSync('dist/js/app.js','utf8');
+const creatorHtml = fs.readFileSync('dist/kreator.html','utf8');
 for (const marker of ['Rekwizyty (51)','id="fishName"','id="fishNameplate"','id="flipSelected"','id="flipFish"','id="flipAll"']) {
-  if (!creatorHtml.includes(marker)) throw new Error(`Kreator v24.11: brak ${marker}`);
+  if (!creatorHtml.includes(marker)) throw new Error(`Kreator v24.12: brak ${marker}`);
 }
-if (/data-name="Gitara"/.test(creatorHtml)) throw new Error('Kreator v24.11 nadal zawiera aktywną Gitarę.');
+if (/data-name="Gitara"/.test(creatorHtml)) throw new Error('Kreator nadal zawiera aktywną Gitarę.');
 
 const residentsHtml = fs.readFileSync('dist/mieszkancy.html','utf8');
 const residentsData = fs.readFileSync('dist/data/mieszkancy-data.js','utf8');
-const appJs = fs.readFileSync('dist/js/app.js','utf8');
-if ((residentsHtml.match(/class="filter atlas-filter/g) || []).length !== 8) throw new Error('Mieszkańcy v24.11: liczba filtrów != 8.');
-if (!residentsData.includes('"name":"Tata Dorsz"')) throw new Error('Mieszkańcy v24.11: brak Tata Dorsz.');
-if (!residentsData.includes('"minimal_card":true') || !residentsData.includes('"all_only":true')) throw new Error('Mieszkańcy v24.11: Tata Dorsz nie jest kartą minimalną/all-only.');
-for (const marker of ['applyAtlasFilter','style.display=show',"setAttribute('aria-pressed'"]) {
-  if (!appJs.includes(marker)) throw new Error(`Mieszkańcy v24.11: brak poprawki filtra ${marker}`);
-}
-const tataAsset = path.join('dist','assets','characters','atlas59','60-tata-dorsz.webp');
-if (!fs.existsSync(tataAsset)) throw new Error('Mieszkańcy v24.11: brak grafiki Tata Dorsz.');
+if ((residentsHtml.match(/class="filter atlas-filter/g) || []).length !== 8) throw new Error('Mieszkańcy: liczba filtrów != 8.');
+if (!residentsData.includes('"name":"Tata Dorsz"')) throw new Error('Mieszkańcy: brak Tata Dorsz.');
+if (!residentsData.includes('"minimal_card":true') || !residentsData.includes('"all_only":true')) throw new Error('Tata Dorsz nie jest minimal/all-only.');
+for (const marker of ['applyAtlasFilter','style.display=show',"setAttribute('aria-pressed'"]) if (!appJs.includes(marker)) throw new Error(`Mieszkańcy: brak filtra ${marker}`);
 const atlasDir = path.join('dist','assets','characters','atlas59');
-if (fs.readdirSync(atlasDir).filter(n => n.endsWith('.webp')).length !== 60) throw new Error('Mieszkańcy v24.11: katalog atlas59 nie ma 60 ikon (59 Atlas + Tata Dorsz).');
-if (!fs.existsSync(path.join('dist','QA_V24_11.json'))) throw new Error('Brak QA_V24_11.json');
+if (fs.readdirSync(atlasDir).filter(n => n.endsWith('.webp')).length !== 60) throw new Error('Mieszkańcy: katalog atlas59 nie ma 60 ikon.');
 
 const mapHtml = fs.readFileSync('dist/mapa.html','utf8');
-if (!mapHtml.includes('id="mapLifeDialog"')) throw new Error('Mapa v24.10: brak galerii życia Dorszy.');
-if ((mapHtml.match(/class="map-pin"/g) || []).length !== 12) throw new Error('Mapa v24.10: liczba punktów mapy != 12.');
-if (!fs.existsSync(path.join('dist','data','map-life.json'))) throw new Error('Mapa v24.10: brak data/map-life.json.');
-const mapLife = JSON.parse(fs.readFileSync(path.join('dist','data','map-life.json'),'utf8'));
-if (mapLife.length !== 12) throw new Error(`Mapa v24.10: map-life ma ${mapLife.length} rekordów zamiast 12.`);
-for (const place of mapLife) {
-  if (!place.name || !place.image) throw new Error('Mapa v24.10: niepełny rekord miejsca.');
-  if (!fs.existsSync(path.join('dist', place.image))) throw new Error(`Mapa v24.10: brak grafiki ${place.image}`);
+if (!mapHtml.includes('id="mapLifeDialog"') || !mapHtml.includes('id="mapLifeStoryLink"')) throw new Error('Mapa: brak galerii lub linku do opowieści.');
+if ((mapHtml.match(/class="map-pin"/g) || []).length !== 12) throw new Error('Mapa: liczba punktów != 12.');
+const mapLife = JSON.parse(fs.readFileSync('dist/data/map-life.json','utf8'));
+if (mapLife.length !== 12) throw new Error(`Mapa: map-life ma ${mapLife.length} rekordów.`);
+for (const place of mapLife) if (!place.slug || !place.image || !fs.existsSync(path.join('dist',place.image))) throw new Error(`Mapa: niepełne miejsce ${place.slug || '?'}`);
+
+const stories = JSON.parse(fs.readFileSync('dist/data/stories.json','utf8'));
+if (stories.length !== 12) throw new Error(`Opowieści v24.12: ${stories.length} zamiast 12.`);
+const fullStories = stories.filter(s => s.status === 'full');
+const pendingStories = stories.filter(s => s.status === 'placeholder');
+if (fullStories.length !== 4 || pendingStories.length !== 8) throw new Error(`Opowieści: pełne ${fullStories.length}, placeholders ${pendingStories.length}.`);
+if (new Set(stories.map(s => s.world_slug)).size !== 12) throw new Error('Opowieści: miejsca mapy nie są unikalne 12/12.');
+const mapSlugs = new Set(mapLife.map(x => x.slug));
+for (const story of stories) {
+  if (!mapSlugs.has(story.world_slug)) throw new Error(`Opowieść ${story.slug}: brak miejsca mapy ${story.world_slug}`);
+  if (!story.cover_path || !fs.existsSync(path.join('dist',story.cover_path))) throw new Error(`Opowieść ${story.slug}: brak okładki.`);
+  if (story.status === 'full' && (!Array.isArray(story.blocks) || !story.blocks.length)) throw new Error(`Opowieść ${story.slug}: brak pełnego tekstu.`);
 }
+const expectedTitles = ['Borys i Dorszuś i Wielka Afera z Pęcherzykiem','Księżniczka Algorytma i Zbuntowany Pomnik','Algoria Powraca, czyli Influencerzy z Głębin','Operacja Koralowy Kosmos'];
+if (fullStories.map(s=>s.title).join('|') !== expectedTitles.join('|')) throw new Error('Opowieści: kolejność 4 pełnych historii jest niezgodna.');
+const kosmos = fullStories.find(s=>s.slug==='operacja-koralowy-kosmos');
+if (!kosmos || kosmos.blocks.filter(b=>b.type==='chapter').length !== 5) throw new Error('Koralowy Kosmos: brak pełnych 5 rozdziałów.');
+const storyHtml = fs.readFileSync('dist/przygody.html','utf8');
+if (!storyHtml.includes('id="storyReadyGrid"') || !storyHtml.includes('id="storyPlaceholderGrid"')) throw new Error('Opowieści: brak nowych gridów.');
+if (/56\s+(pełnych\s+)?histor/i.test(storyHtml) || storyHtml.includes('storyCycleAtlas')) throw new Error('Opowieści: pozostał stary cykl 56/Atlas.');
+if (fs.existsSync('dist/data/story-cycle-01-borys-dorszus.json') || fs.existsSync('dist/data/story-cycle-02-atlas-legends.json')) throw new Error('Opowieści: pozostały stare pliki cykli.');
+for (const marker of ["get('story')","get('miejsce')",'WORLD_STORIES']) if (!appJs.includes(marker)) throw new Error(`Opowieści/mapa: brak integracji ${marker}`);
 
 const songHtml = fs.readFileSync('dist/piosenka.html','utf8');
 if (!songHtml.includes('1QgHjP-gKDzkvbIvv-PpvE94QlFRrj_cu/preview')) throw new Error('Brak pełnego teledysku.');
-for (const asset of ['piosenka-dorszolandia.m4a','dorszolandia-piosenka-2.mp3','dorszolandia-piosenka-3.mp3']) {
-  if (!fs.existsSync(path.join('dist','assets','media',asset))) throw new Error(`Brak multimedia ${asset}`);
-}
+for (const asset of ['piosenka-dorszolandia.m4a','dorszolandia-piosenka-2.mp3','dorszolandia-piosenka-3.mp3']) if (!fs.existsSync(path.join('dist','assets','media',asset))) throw new Error(`Brak multimedia ${asset}`);
 const shopHtml = fs.readFileSync('dist/sklep.html','utf8');
 if (/\d+,\d{2}\s*zł|\d+\s*zł/i.test(shopHtml)) throw new Error('Sklep nie może zawierać cen.');
+if (!fs.existsSync('dist/QA_V24_12.json')) throw new Error('Brak QA_V24_12.json');
 
 fs.writeFileSync('dist/vercel-build.txt', [
   `Dorszolandia ${BUILD_VERSION}`,
@@ -105,15 +117,17 @@ fs.writeFileSync('dist/vercel-build.txt', [
   `Package bytes ${packed.length}`,
   `Package SHA256 ${sha}`,
   `Extracted files ${files}`,
-  `Residents filters fixed: 8 buttons / deterministic filtering`,
-  `Residents: 59 canonical Atlas + Tata Dorsz special card`,
-  `Tata Dorsz: image normalized / no description / all-only`,
-  `Map 12/12 places -> 12 life-scene graphics`,
-  `Creator 51 props / 31 Drive-HQ`,
-  `59 normalized canonical Atlas icons retained + 1 special icon`,
-  `Full teledysk + 3 songs + premium covers`,
+  `Stories 12/12 map worlds`,
+  `Stories full 4 / placeholders 8`,
+  `Full sequence: Afera -> Ksiezniczka Algorytma -> Algoria Powraca -> Koralowy Kosmos`,
+  `Koralowy Kosmos: 5 chapters`,
+  `Story covers: 4 user covers + 8 map-life scenes`,
+  `Map -> story deep links: enabled`,
+  `Old 56-story/Atlas story UI: removed`,
+  `Residents: 60 incl. Tata Dorsz; filters retained`,
+  `Creator 51 props retained`,
+  `Full teledysk + 3 songs retained`,
   `Shop plan only, no prices`,
-  `Public UI naming Dorszolandia only`,
   `Built ${new Date().toISOString()}`,
   ''
 ].join('\n'));
