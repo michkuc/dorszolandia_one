@@ -3,18 +3,18 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const BUILD_VERSION = 'v24.9-creator-hq-props-production';
+const BUILD_VERSION = 'v24.10-map-life-production';
 const FILE_ID = '1RiXybg-8NtLTiq5oyAsVrK8fujzHT62Q';
 const DRIVE_URL = `https://drive.google.com/uc?export=download&id=${FILE_ID}`;
-const EXPECTED_SHA256 = '5ffdcbb66405a8ef54c4542bf393a3ae8ad00f1f0c625282cd85e1bef466be67';
-const EXPECTED_BYTES = 22254268;
+const EXPECTED_SHA256 = '79161356896190b55a2c071e23291fba218f6f0745cc3639f4fe34c06f9e9324';
+const EXPECTED_BYTES = 26637678;
 
 const response = await fetch(DRIVE_URL, { redirect: 'follow' });
 if (!response.ok) throw new Error(`Google Drive download failed: ${response.status} ${response.statusText}`);
 const packed = Buffer.from(await response.arrayBuffer());
 const sha = crypto.createHash('sha256').update(packed).digest('hex');
-if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v24.9 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
-if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v24.9 nie zgadza się: ${sha}`);
+if (packed.length !== EXPECTED_BYTES) throw new Error(`Rozmiar v24.10 nie zgadza się: ${packed.length} != ${EXPECTED_BYTES}`);
+if (sha !== EXPECTED_SHA256) throw new Error(`SHA256 v24.10 nie zgadza się: ${sha}`);
 
 const tar = zlib.gunzipSync(packed);
 fs.rmSync('dist', { recursive: true, force: true });
@@ -61,9 +61,9 @@ for (const page of requiredPages) {
 
 const creatorHtml = fs.readFileSync('dist/kreator.html', 'utf8');
 for (const marker of ['Rekwizyty (51)','id="fishName"','id="fishNameplate"','id="flipSelected"','id="flipFish"','id="flipAll"']) {
-  if (!creatorHtml.includes(marker)) throw new Error(`Kreator v24.9: brak ${marker}`);
+  if (!creatorHtml.includes(marker)) throw new Error(`Kreator v24.10: brak ${marker}`);
 }
-if (/data-name="Gitara"/.test(creatorHtml)) throw new Error('Kreator v24.9 nadal zawiera aktywną Gitarę.');
+if (/data-name="Gitara"/.test(creatorHtml)) throw new Error('Kreator v24.10 nadal zawiera aktywną Gitarę.');
 const newProps = ['drive-skrzynia-skarbow.webp','drive-czapka-pilota.webp','drive-czapka-kapitana.webp','drive-beben.webp','drive-kapelusz-pirata.webp','drive-kask-strazacki.webp','drive-czapka-detektywa.webp','drive-luneta.webp','drive-mapa-skarbow.webp'];
 for (const asset of newProps) {
   if (!fs.existsSync(path.join('dist','assets','creator','props',asset))) throw new Error(`Brak rekwizytu HQ ${asset}`);
@@ -80,12 +80,27 @@ for (const asset of ['piosenka-dorszolandia.m4a','dorszolandia-piosenka-2.mp3','
 const shopHtml = fs.readFileSync('dist/sklep.html','utf8');
 if (/\d+,\d{2}\s*zł|\d+\s*zł/i.test(shopHtml)) throw new Error('Sklep nie może zawierać cen.');
 
+const mapHtml = fs.readFileSync('dist/mapa.html','utf8');
+if (!mapHtml.includes('id="mapLifeDialog"')) throw new Error('Mapa v24.10: brak galerii życia Dorszy.');
+if ((mapHtml.match(/class="map-pin"/g) || []).length !== 12) throw new Error('Mapa v24.10: liczba punktów mapy != 12.');
+if (!fs.existsSync(path.join('dist','data','map-life.json'))) throw new Error('Mapa v24.10: brak data/map-life.json.');
+const mapLife = JSON.parse(fs.readFileSync(path.join('dist','data','map-life.json'),'utf8'));
+if (mapLife.length !== 12) throw new Error(`Mapa v24.10: map-life ma ${mapLife.length} rekordów zamiast 12.`);
+for (const place of mapLife) {
+  if (!place.name || !place.image) throw new Error('Mapa v24.10: niepełny rekord miejsca.');
+  const full = path.join('dist', place.image);
+  if (!fs.existsSync(full)) throw new Error(`Mapa v24.10: brak grafiki ${place.image}`);
+}
+if (!fs.existsSync(path.join('dist','QA_V24_10.json'))) throw new Error('Brak QA_V24_10.json');
+
 fs.writeFileSync('dist/vercel-build.txt', [
   `Dorszolandia ${BUILD_VERSION}`,
   `Drive package ${FILE_ID}`,
   `Package bytes ${packed.length}`,
   `Package SHA256 ${sha}`,
   `Extracted files ${files}`,
+  `Map 12/12 places -> 12 life-scene graphics`,
+  `Map premium modal + previous/next + mobile/keyboard`,
   `Creator 51 props / 31 Drive-HQ`,
   `9 newly added HQ props from Drive`,
   `Gitara removed; active duplicate names/paths = 0`,
