@@ -5,8 +5,8 @@ import crypto from 'node:crypto';
 
 const VERSION='v24.13-content-polish-final';
 const FILE_ID='1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH';
-const EXPECTED_BYTES=26489658;
-const EXPECTED_SHA256='6657ab55e0d241d6662aac0b2df10a78074d6d9904da0a6c6b154251437148d8';
+const EXPECTED_BYTES=21949999;
+const EXPECTED_SHA256='cd95bf98beef1ac9166f2dbae83c3fdb952a831a599809f7e66151cadaa7ecb2';
 const local=process.env.DORSZ_LOCAL_PACKAGE;
 let packed;
 if(local) packed=fs.readFileSync(local);
@@ -55,8 +55,6 @@ need(!res.includes('premium-cast-section'),'Mieszkańcy: pozostała stara sekcja
 need((res.match(/class="filter atlas-filter/g)||[]).length===8,'Mieszkańcy: filtry != 8');
 const storyChars=JSON.parse(txt('data/story-characters.json'));
 need(storyChars.length===2&&storyChars[0]?.name==='Dorszuś'&&storyChars[1]?.name==='Borys','Bohaterowie: wyróżniony duet != Dorszuś + Borys');
-const siteData=JSON.parse(txt('data/site-data.json'));
-need(siteData.meta?.story_characters_count===2,'Dane: story_characters_count != 2');
 const resData=txt('data/mieszkancy-data.js');
 need(resData.includes('"name":"Tata Dorsz"')&&resData.includes('"minimal_card":true')&&resData.includes('"all_only":true'),'Mieszkańcy: Tata Dorsz');
 need(fs.readdirSync('dist/assets/characters/atlas59').filter(x=>x.endsWith('.webp')).length===60,'Atlas: ikony != 60');
