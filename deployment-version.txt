@@ -1,25 +1,24 @@
-Dorszolandia v24.14 PREMIUM — STORY WORLDS + CONTENT POLISH
-Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Current Drive package: Dorszolandia_v24_14_STORY_WORLDS_CONTENT_POLISH_FINAL.tar.gz
-Current Drive package bytes: 24402707
-Current Drive package SHA256: 5e104c7ecbea1b27fa4146e1f1d624314952913f39f6234bca88c51f20436d55
-Build version: v24.14-story-worlds-content-polish-final
+Dorszolandia v24.15 PREMIUM — SAFE CLEANUP
+Drive deploy package: 1oZOzEzSQoRUM4xj9XujFZP2vJcqoP3f7
+Current Drive package: Dorszolandia_v24_15_SAFE_CLEANUP.tar.gz
+Current Drive package bytes: 24405506
+Current Drive package SHA256: b71fabe2a042bc2a4a34211b7921111a21531785c548d7b428b6fef135adfd79
+Build version: v24.15-safe-cleanup
 Architecture: 11 independent pages with clean URLs
-Main heroes: Dorszuś + Borys only in the featured character section
+Visual design: retained from v24.14; no redesign
 Residents: 60 cards incl. Tata Dorsz; 8 filters retained
-Creator: 51 props; fish naming, mirror controls and saved composition retained
-Stories: 12 map worlds = 12 story slots; 7 full; 5 placeholders
-Tom I full: Zatoka Tajemnic; Las Wodorostów; Królewski Dwór
-Classic full sequence: Afera z Pęcherzykiem -> Księżniczka Algorytma -> Algoria Powraca -> Operacja Koralowy Kosmos
-Story card covers: map-life scenes assigned to each world
-Classic reader artwork: 4 dedicated vertical covers retained
-Map integration: all 12 places link to their assigned story slot
-Public story source wording preserved; historical names inside source stories are not rewritten
-Piosenki: 3 audio tracks + full video retained; songs 2 and 3 optimized to browser-friendly 160 kbps MP3
+Public section "Postacie z opowiadań": removed; underlying source data/assets retained
+Main heroes: Dorszuś + Borys moved below Mieszkańcy miasta i Dwór Koralu
+World story slots: 12 total; 3 full; 9 placeholders
+Full map-world stories: Zatoka Tajemnic; Las Wodorostów; Królewski Dwór
+Restored placeholders: Zamek Dorszolandii; Laboratorium Bąbel; Wieża Czarodzieja; Port Muszelka
+Classic stories: 4 full stories preserved separately from map-world slots
+Classic covers: existing dedicated posters reused; no new images generated
+Map integration: 12/12 pins link only to their own world-story slots
+Classic source texts: unchanged
+Creator: 51 props retained
+Piosenki: 3 audio tracks + full video retained
 Shop: PLAN ONLY; no prices, checkout or payments
-Public implementation/editorial notes: removed
-Visible build stamps: removed from all public pages
-Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-Deployment package: 24,402,707 bytes, below 25 MB target
-QA: 11 pages; 2 featured heroes; 60 resident cards; 12 stories (7/5); 12 map locations; 12/12 map-story mapping; 51 creator props; JS syntax OK; asset scan PASS; editorial-note scan PASS
+QA: 11 pages; no missing local references; no duplicate HTML IDs; JS syntax PASS; map/story mapping PASS
+Rollback: v24.14 Drive package remains untouched
 Pipeline: GitHub main -> Vercel production
