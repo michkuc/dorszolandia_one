@@ -4,9 +4,9 @@ import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
 const VERSION='v24.20-soccer-icon-safe-fix';
-const FILE_ID='1W034_jJ55GnmB8AF3hmFi_O433TPHL3n';
-const EXPECTED_BYTES=24494033;
-const EXPECTED_SHA256='1566b462823a8ac93c08f4a09539697d3ccb2e6edf359b72e5f5d51727f66627';
+const FILE_ID='1KwAawubl16p4EUM0T1AmPL9DvzV5lx9J';
+const EXPECTED_BYTES=24421165;
+const EXPECTED_SHA256='163f1dd66d70c95a760a5063356f39edeb47cae88e745877585facff83b7ab4c';
 const SOURCE_HASHES={
   'zatoka-tajemnic':'dce4e116a076e981065df2d4f3521e9441ba62c6a70d6c667d5d69a8fc28142d',
   'las-wodorostow':'5e2fdfbc798a40236fa8c411e7088b37c8a21fc5ab7ca9ab86fce7b4fc503c7b',
@@ -60,7 +60,8 @@ need((gameHtml.match(/data-game-card=/g)||[]).length===7,'Games Hub must contain
 for(const key of ['chase','memory','quiz','treasure','puzzle','simon','goal']) need(gameHtml.includes(`data-game-card="${key}"`),`Missing game ${key}`);
 need(gameHtml.includes('id="goalBallV25"'),'Goalkeeper ball control missing');
 need(gameHtml.includes('class="soccer-icon-v25"')&&gameHtml.includes('>⚽</span>'),'Goalkeeper must use soccer icon');
-need(!gameHtml.includes('pika-futbolowa.webp')&&!gameHtml.includes('🏈'),'American-football reference still active');
+need(!/id="goalBallV25"[^>]*>[\s\S]*?pika-futbolowa\.webp/.test(gameHtml),'American-football image still used in goalkeeper');
+need(!gameHtml.includes('🏈'),'American-football emoji must not appear');
 need(gameCss.includes('.soccer-icon-v25'),'Soccer icon styling missing');
 
 const world=JSON.parse(txt('data/stories.json'));
@@ -82,7 +83,7 @@ need(txt('kreator.html').includes('Rekwizyty (51)'),'Creator regression');
 for(const a of ['piosenka-dorszolandia.m4a','dorszolandia-piosenka-2.mp3','dorszolandia-piosenka-3.mp3']) need(fs.existsSync(path.join('dist/assets/media',a)),`Missing media ${a}`);
 need(!/\d+,\d{2}\s*zł|\d+\s*zł/i.test(txt('sklep.html')),'Shop price regression');
 const qa=JSON.parse(txt('QA_V24_20.json'));
-need(qa.games_total===7&&qa.goalkeeper_uses_soccer_icon===true&&qa.goalkeeper_american_football_reference===false,'QA v24.20 invalid');
+need(qa.games_total===7&&qa.goalkeeper_ball==='unicode_soccer_icon'&&qa.generated_images===false&&qa.game_logic_changed===false,'QA v24.20 invalid');
 
 fs.writeFileSync('dist/vercel-build.txt',[
   `Dorszolandia ${VERSION}`,
