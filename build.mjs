@@ -5,8 +5,8 @@ import crypto from 'node:crypto';
 
 const VERSION='v24.13-content-polish-final';
 const FILE_ID='1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH';
-const EXPECTED_BYTES=21949999;
-const EXPECTED_SHA256='cd95bf98beef1ac9166f2dbae83c3fdb952a831a599809f7e66151cadaa7ecb2';
+const EXPECTED_BYTES=21940297;
+const EXPECTED_SHA256='0c7db7c5c03e426edc21a37a14aaa87640999205e6c46d5fb4c736910c66980d';
 const local=process.env.DORSZ_LOCAL_PACKAGE;
 let packed;
 if(local) packed=fs.readFileSync(local);
