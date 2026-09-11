@@ -1,8 +1,8 @@
 Dorszolandia v24.13 PREMIUM — CONTENT POLISH + MAIN DUO
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
 Current Drive package: Dorszolandia_v24_13_CONTENT_POLISH_PRODUCTION.tar.gz
-Current Drive package bytes: 21949999
-Current Drive package SHA256: cd95bf98beef1ac9166f2dbae83c3fdb952a831a599809f7e66151cadaa7ecb2
+Current Drive package bytes: 21940297
+Current Drive package SHA256: 0c7db7c5c03e426edc21a37a14aaa87640999205e6c46d5fb4c736910c66980d
 Build version: v24.13-content-polish-final
 Architecture: 11 independent pages with clean URLs
 Main heroes: Dorszuś + Borys only in the featured character section
@@ -12,7 +12,7 @@ Resident copy: removed the note about Tata Dorsz being at the end of the list
 Homepage: removed internal/project commentary and corrected Creator count to 51 props
 Dorszopedia: main heroes reduced to Dorszuś + Borys; editorial/project notes removed
 Games / Materials / Map / Stories / Songs / Creator / Shop: public copy cleaned of implementation notes
-Creator: 51 props; internal Google Drive / DRIVE HQ labels removed from public UI
+Creator: 51 props; Google Drive provenance removed from public HTML
 Stories: 12 map worlds = 12 story slots; 7 full; 5 placeholders
 Map integration: all 12 places link to their assigned story slot
 Piosenki: 3 audio tracks + full video retained
@@ -22,4 +22,4 @@ Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
 Deployment package: slimmed below 25 MB for stable Drive -> Vercel build
 QA: 11 pages; 2 featured heroes; 60 resident cards; 12 stories (7/5); 12 map locations; 51 creator props; JS syntax OK; editorial-note scan PASS
 Pipeline: GitHub main -> Vercel production
-Redeploy: 2026-09-11 after Drive package synchronization.
+Final validation fix: removed remaining Google Drive provenance attributes/meta text from Creator public HTML.
