@@ -1,25 +1,18 @@
-Dorszolandia v24.19 PREMIUM — GAMES HUB
-Drive deploy package: 1aBBd3Ed2J3081uDY5ZwJBPGUaWIYl9MB
-Current Drive package: Dorszolandia_v24_19_GAMES_HUB.tar.gz
-Current Drive package bytes: 24418653
-Current Drive package SHA256: a4fb3d02c2e31f272fdeac0667b73929957435183ec62cc0591cd97e16e52dc6
-Build version: v24.19-games-hub
-Scope: Gry page + dedicated games CSS/JS only
-Games: 7 total
-Existing games retained: Memory mieszkańców; Quiz Dorszopedii; Skarby Rafy; Puzzle Mapy; Smoczy Szyfr; Bramkarz Dorsz
-New flagship game: Pogoń za Złotym Pęcherzem
-Progression: Paszport Dorszolandii, 21 shells max, local best scores, resident discoveries every 3 shells
-Memory: existing resident portraits from 60-character atlas
-Quiz: existing resident role data, randomized answers
-Puzzle: real Dorszolandia map, 3x3 sliding puzzle
-Treasure: existing Zatoka Tajemnic and creator props
-Smoczy Szyfr: existing Smocza Grota and props
-Bramkarz: existing Płetwa Arena, goalkeeper character and football asset
-New images generated: none
+Dorszolandia v24.20 PREMIUM — SOCCER ICON SAFE FIX
+Drive deploy package: 1W034_jJ55GnmB8AF3hmFi_O433TPHL3n
+Current Drive package: Dorszolandia_v24_20_SOCCER_ICON_SAFE_FIX.tar.gz
+Current Drive package bytes: 24494033
+Current Drive package SHA256: 1566b462823a8ac93c08f4a09539697d3ccb2e6edf359b72e5f5d51727f66627
+Build version: v24.20-soccer-icon-safe-fix
+Scope: Bramkarz Dorsz only
+Games: 7 retained
+Goalkeeper ball: system soccer icon ⚽
+American-football active reference: removed from Games Hub
+No image generated; no source asset deleted
+Other games: unchanged
 Story content: unchanged; source integrity 7/7 retained
-Classic stories: unchanged at exactly 4 full stories
 World story slots: unchanged at 12 total; 3 full; 9 placeholders
-Map story mapping: unchanged
+Classic stories: unchanged at exactly 4 full stories
 Residents/Creator/Materials/Songs/Shop: unchanged
-Rollback: v24.18 package remains untouched
+Rollback: v24.19 package remains untouched
 Pipeline: GitHub main -> Vercel production
