@@ -1,20 +1,23 @@
-Dorszolandia v24.22 PREMIUM — MATERIALS PUBLIC SAFE UPDATE
-Drive deploy package: 1TXXPDyIn-PvMd-Ys92ywp271Wzhg1bYr
-Current Drive package: Dorszolandia_v24_22_MATERIALS_PUBLIC_SAFE_UPDATE.tar.gz
-Current Drive package bytes: 25012731
-Current Drive package SHA256: acf4d454353a866dd9f136e7e616b104c72f497f910a996d088cab4472196cc4
-Build version: v24.22-materials-public-safe-update
-Scope: Materials page + top navigation + privacy purge for lesson-plan assets
-Top navigation: Materialy added on all 11 pages
-New public posters: exactly 4 user-supplied posters — Zegar i czas; Ortografia; Alfabet; Kalendarz szkolny 2026/2027
-Generated/recreated artwork: none
-Poster handling: visually faithful WebP web copies made from the user-supplied posters to keep the deploy package below the Drive direct-download limit
-Private lesson plan: removed from public Materials page
-Private lesson-plan assets: removed from deploy package
-Private lesson-plan manifest/registry records: removed
-Existing public materials retained: Mapa Mnożenia; Rybki i zawody; Sportowe rybki; Rybki i hobby
-Stories/map/games/residents/creator/songs/shop: unchanged
+Dorszolandia v24.23 PREMIUM — MAP CARD CONSISTENCY SAFE FIX
+Drive deploy package: 1bG6MsrH-Xb301Myf4aBBTTZCus6Mallg
+Current Drive package: Dorszolandia_v24_23_MAP_CARD_CONSISTENCY_SAFE_FIX.tar.gz
+Current Drive package bytes: 25025884
+Current Drive package SHA256: 90d1acce2a11f5efd1467b185bdc14d48772a5f078016abf9c062916241187b9
+Build version: v24.23-map-card-consistency-safe-fix
+Scope: Mapa consistency only
+Canonical map source: data/map-life.json
+Map pins: 12/12 synchronized with canonical story_id/title/status/href
+Map lower place cards: 12/12 synchronized with canonical story_id/title/status/href
+Restored placeholders remain: Zamek Dorszolandii; Laboratorium Bąbel; Wieża Czarodzieja; Port Muszelka
+Classic stories: exactly 4 full stories, separate from map-world slots
+World story slots: unchanged at 12 total; 3 full; 9 placeholders
 Story source integrity: 7/7 retained
-Games: 7 retained including goalkeeper soccer-ball fix
-Rollback: v24.21 package remains untouched
+Materials v24.22 retained, including 4 educational posters
+Private lesson plan: absent from public deploy package
+Games: 7 retained, goalkeeper soccer-ball fix retained
+Residents: 60 retained
+Creator: 51 props retained
+Songs/Shop: unchanged
+Generated images: none
+Rollback: v24.22 package remains untouched
 Pipeline: GitHub main -> Vercel production
