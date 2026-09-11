@@ -2,6 +2,6 @@
   "name": "dorszolandia-one",
   "private": true,
   "scripts": {
-    "build": "node build-v2417.mjs"
+    "build": "node build-v2418.mjs"
   }
 }
