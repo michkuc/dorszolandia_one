@@ -1,24 +1,24 @@
-Dorszolandia v24.13 PREMIUM — RESIDENTS / STORY CHARACTERS CLEANUP
+Dorszolandia v24.13 PREMIUM — CONTENT POLISH + MAIN DUO
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Current Drive package: Dorszolandia_v24_13_VERCEL_READY.tar.gz
-Current Drive package bytes: 24533535
-Current Drive package SHA256: fbe2a51a8e340189c5e433d3900c95321aa76c86e5d68366be30cb6c11e0c8fa
-Build version: v24.13-residents-story-clean
+Current Drive package: Dorszolandia_v24_13_CONTENT_POLISH_PRODUCTION.tar.gz
+Current Drive package bytes: 21949999
+Current Drive package SHA256: cd95bf98beef1ac9166f2dbae83c3fdb952a831a599809f7e66151cadaa7ecb2
+Build version: v24.13-content-polish-final
 Architecture: 11 independent pages with clean URLs
-Residents: Atlas 59 + Tata Dorsz; filters retained
-Residents layout: duplicate top section “Dorszuś, Borys i bohaterowie Dorszolandii” removed
-Residents order: “Mieszkańcy miasta i Dwór Koralu” first; “Postacie z opowiadań” moved below the resident atlas
-Verified story characters shown: Dorszuś; Borys; Król Dorsz; Bąbel Maksymalny; Krab Szczękacz; Algoria
-Removed from story-character section because no occurrence was found in the current 7 full stories: Krebsław Zasięgowy; Krab Krabiewicz; Pani Świecikora; Zipperius Maximus
-Story character artwork: 6 normalized 500x500 assets; active UI no longer uses the bad integrated-label crops for Król Dorsz, Bąbel Maksymalny and Algoria
+Main heroes: Dorszuś + Borys only in the featured character section
+Main hero descriptions: expanded and rewritten for end users
+Residents: 60 cards incl. Tata Dorsz; 8 filters retained
+Resident copy: removed the note about Tata Dorsz being at the end of the list
+Homepage: removed internal/project commentary and corrected Creator count to 51 props
+Dorszopedia: main heroes reduced to Dorszuś + Borys; editorial/project notes removed
+Games / Materials / Map / Stories / Songs / Creator / Shop: public copy cleaned of implementation notes
+Creator: 51 props; internal Google Drive / DRIVE HQ labels removed from public UI
 Stories: 12 map worlds = 12 story slots; 7 full; 5 placeholders
-Tom I full: Zatoka Tajemnic; Las Wodorostów; Królewski Dwór
-Classic full sequence: Afera z Pęcherzykiem -> Księżniczka Algorytma -> Algoria Powraca -> Operacja Koralowy Kosmos
 Map integration: all 12 places link to their assigned story slot
-Creator: 51 props; naming and mirror controls retained
 Piosenki: 3 audio tracks + full video retained
-Shop state: PLAN ONLY; no prices, checkout or payments
+Shop: PLAN ONLY; no prices, checkout or payments
+Visible build stamps: removed from all public pages
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-Deployment package slimmed below 25 MB to avoid large-file download interstitials in Vercel build.
-QA: duplicate section removed; residents before story characters; 6 verified story-character cards; 7 full / 5 placeholders; map links retained
+Deployment package: slimmed below 25 MB for stable Drive -> Vercel build
+QA: 11 pages; 2 featured heroes; 60 resident cards; 12 stories (7/5); 12 map locations; 51 creator props; JS syntax OK; editorial-note scan PASS
 Pipeline: GitHub main -> Vercel production
