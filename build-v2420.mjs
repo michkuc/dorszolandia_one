@@ -4,7 +4,7 @@ import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
 const VERSION='v24.20-soccer-icon-safe-fix';
-const FILE_ID='1KwAawubl16p4EUM0T1AmPL9DvzV5lx9J';
+const FILE_ID='1OzWx-qlR4S_EUh93cN9g8Xvw092y9uel';
 const EXPECTED_BYTES=24421165;
 const EXPECTED_SHA256='163f1dd66d70c95a760a5063356f39edeb47cae88e745877585facff83b7ab4c';
 const SOURCE_HASHES={
