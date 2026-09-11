@@ -1,23 +1,15 @@
-Dorszolandia v24.23 PREMIUM — MAP CARD CONSISTENCY SAFE FIX
-Drive deploy package: 1bG6MsrH-Xb301Myf4aBBTTZCus6Mallg
-Current Drive package: Dorszolandia_v24_23_MAP_CARD_CONSISTENCY_SAFE_FIX.tar.gz
-Current Drive package bytes: 25025884
-Current Drive package SHA256: 90d1acce2a11f5efd1467b185bdc14d48772a5f078016abf9c062916241187b9
-Build version: v24.23-map-card-consistency-safe-fix
-Scope: Mapa consistency only
-Canonical map source: data/map-life.json
-Map pins: 12/12 synchronized with canonical story_id/title/status/href
-Map lower place cards: 12/12 synchronized with canonical story_id/title/status/href
-Restored placeholders remain: Zamek Dorszolandii; Laboratorium Bąbel; Wieża Czarodzieja; Port Muszelka
-Classic stories: exactly 4 full stories, separate from map-world slots
-World story slots: unchanged at 12 total; 3 full; 9 placeholders
-Story source integrity: 7/7 retained
-Materials v24.22 retained, including 4 educational posters
-Private lesson plan: absent from public deploy package
-Games: 7 retained, goalkeeper soccer-ball fix retained
-Residents: 60 retained
-Creator: 51 props retained
-Songs/Shop: unchanged
+Dorszolandia v24.24 PREMIUM — PUBLIC STORY COPY CLEANUP
+Drive deploy package: 1ti7GL9EH-N8coiSbivkf3dkAc760hwm8
+Current Drive package: Dorszolandia_v24_24_PUBLIC_STORY_COPY_CLEANUP.tar.gz
+Current Drive package bytes: 25027571
+Current Drive package SHA256: 7ec0d6987166da12d7fe3f865a8631b3c8a9efb0560aa69434f1edaac3e06b72
+Build version: v24.24-public-story-copy-cleanup
+Scope: public descriptions on Opowieści page only
+World intro: user-facing wording; no count/slots/internal production language
+Classic intro: user-facing wording; removed 1:1/editorial wording
+Story texts and source integrity: unchanged / locked 7/7
+World/map/classic mapping: unchanged; v24.23 fix retained
+Games/Residents/Creator/Materials/Songs/Shop: unchanged
 Generated images: none
-Rollback: v24.22 package remains untouched
+Rollback: v24.23 package remains untouched
 Pipeline: GitHub main -> Vercel production
