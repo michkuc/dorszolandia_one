@@ -1,17 +1,25 @@
-Dorszolandia v24.18 PREMIUM — CLASSIC FOUR SAFE UI FIX
-Drive deploy package: 1s-_sDKmNEwewloFQgfAOp93r2g2Zlg1t
-Current Drive package: Dorszolandia_v24_18_CLASSIC_FOUR_SAFE_UI_FIX.tar.gz
-Current Drive package bytes: 24411808
-Current Drive package SHA256: 5303fd9f37120574089d8f1d013543a7cc0d5e67ad320f928119d5db013eb73c
-Build version: v24.18-classic-four-safe-ui-fix
-Scope: Opowieści page only
-Classic stories: exactly 4 full stories
-Classic titles: Borys i Dorszuś i Wielka Afera z Pęcherzykiem; Księżniczka Algorytma i Zbuntowany Pomnik; Algoria Powraca, czyli Influencerzy z Głębin; Operacja Koralowy Kosmos
-Classic source integrity: unchanged; existing 1:1 content hashes retained
-Classic covers: existing four dedicated posters retained; no images generated
-UI fix: removed legacy first-card spanning layout from classic stories only; all 4 classic cards now use equal layout
-Other site content: unchanged
+Dorszolandia v24.19 PREMIUM — GAMES HUB
+Drive deploy package: 1aBBd3Ed2J3081uDY5ZwJBPGUaWIYl9MB
+Current Drive package: Dorszolandia_v24_19_GAMES_HUB.tar.gz
+Current Drive package bytes: 24418653
+Current Drive package SHA256: a4fb3d02c2e31f272fdeac0667b73929957435183ec62cc0591cd97e16e52dc6
+Build version: v24.19-games-hub
+Scope: Gry page + dedicated games CSS/JS only
+Games: 7 total
+Existing games retained: Memory mieszkańców; Quiz Dorszopedii; Skarby Rafy; Puzzle Mapy; Smoczy Szyfr; Bramkarz Dorsz
+New flagship game: Pogoń za Złotym Pęcherzem
+Progression: Paszport Dorszolandii, 21 shells max, local best scores, resident discoveries every 3 shells
+Memory: existing resident portraits from 60-character atlas
+Quiz: existing resident role data, randomized answers
+Puzzle: real Dorszolandia map, 3x3 sliding puzzle
+Treasure: existing Zatoka Tajemnic and creator props
+Smoczy Szyfr: existing Smocza Grota and props
+Bramkarz: existing Płetwa Arena, goalkeeper character and football asset
+New images generated: none
+Story content: unchanged; source integrity 7/7 retained
+Classic stories: unchanged at exactly 4 full stories
 World story slots: unchanged at 12 total; 3 full; 9 placeholders
-Residents/map/games/creator/materials/songs/shop: unchanged
-Rollback: v24.17 package remains untouched
+Map story mapping: unchanged
+Residents/Creator/Materials/Songs/Shop: unchanged
+Rollback: v24.18 package remains untouched
 Pipeline: GitHub main -> Vercel production
