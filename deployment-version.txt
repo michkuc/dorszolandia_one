@@ -1,6 +1,6 @@
 Dorszolandia v24.20 PREMIUM — SOCCER ICON SAFE FIX
-Drive deploy package: 1KwAawubl16p4EUM0T1AmPL9DvzV5lx9J
-Current Drive package: Dorszolandia_v24_20_SOCCER_ICON_SAFE_FIX.tar.gz
+Drive deploy package: 1OzWx-qlR4S_EUh93cN9g8Xvw092y9uel
+Current Drive package: Dorszolandia_v24_20_SOCCER_ICON_UNICODE_SAFE_FIX.tar.gz
 Current Drive package bytes: 24421165
 Current Drive package SHA256: 163f1dd66d70c95a760a5063356f39edeb47cae88e745877585facff83b7ab4c
 Build version: v24.20-soccer-icon-safe-fix
