@@ -3,10 +3,10 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import crypto from 'node:crypto';
 
-const VERSION='v24.13-content-polish-final';
+const VERSION='v24.14-story-worlds-content-polish-final';
 const FILE_ID='1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH';
-const EXPECTED_BYTES=21940297;
-const EXPECTED_SHA256='0c7db7c5c03e426edc21a37a14aaa87640999205e6c46d5fb4c736910c66980d';
+const EXPECTED_BYTES=24402707;
+const EXPECTED_SHA256='5e104c7ecbea1b27fa4146e1f1d624314952913f39f6234bca88c51f20436d55';
 const local=process.env.DORSZ_LOCAL_PACKAGE;
 let packed;
 if(local) packed=fs.readFileSync(local);
@@ -68,6 +68,6 @@ const map=txt('mapa.html'); need((map.match(/class="map-pin"/g)||[]).length===12
 const creator=txt('kreator.html'); for(const m of ['Rekwizyty (51)','id="fishName"','id="fishNameplate"','id="flipSelected"','id="flipFish"','id="flipAll"']) need(creator.includes(m),`Kreator: brak ${m}`); need(!/data-name="Gitara"/.test(creator),'Kreator: aktywna Gitara');
 const song=txt('piosenka.html'); need(song.includes('1QgHjP-gKDzkvbIvv-PpvE94QlFRrj_cu/preview'),'Piosenki: brak teledysku'); for(const a of ['piosenka-dorszolandia.m4a','dorszolandia-piosenka-2.mp3','dorszolandia-piosenka-3.mp3']) need(fs.existsSync(path.join('dist/assets/media',a)),`Piosenki: brak ${a}`);
 need(!/\d+,\d{2}\s*zł|\d+\s*zł/i.test(txt('sklep.html')),'Sklep: nie może zawierać cen');
-const qa=JSON.parse(txt('QA_V24_13.json')); need(qa.public_editorial_notes_removed===true&&qa.featured_story_characters_count===2,'QA v24.13 nie potwierdza cleanupu');
-fs.writeFileSync('dist/vercel-build.txt',[`Dorszolandia ${VERSION}`,`Drive package ${FILE_ID}`,`Package bytes ${packed.length}`,`Package SHA256 ${sha}`,`Extracted files ${files}`,'Main heroes: Dorszus + Borys','Residents: 60 incl. Tata Dorsz','Stories: 12 total / 7 full / 5 planned','Map: 12 locations linked to stories','Creator: 51 props','Public editorial/developer notes: removed','Visible build stamps: removed','Shop: plan only, no prices',`Built ${new Date().toISOString()}`,''].join('\n'));
+const qa=JSON.parse(txt('QA_V24_14.json')); need(qa.public_editorial_notes_removed===true&&qa.featured_story_characters_count===2&&qa.stories_total===12&&qa.stories_full===7&&qa.stories_placeholder===5,'QA v24.14 nie potwierdza finalnego stanu');
+fs.writeFileSync('dist/vercel-build.txt',[`Dorszolandia ${VERSION}`,`Drive package ${FILE_ID}`,`Package bytes ${packed.length}`,`Package SHA256 ${sha}`,`Extracted files ${files}`,'Main heroes: Dorszus + Borys','Residents: 60 incl. Tata Dorsz','Stories: 12 total / 7 full / 5 planned','Tom I: 3 full stories','Classic sequence: 4 full stories','Map: 12 locations linked to stories','Creator: 51 props','Public editorial/developer notes: removed','Visible build stamps: removed','Shop: plan only, no prices',`Built ${new Date().toISOString()}`,''].join('\n'));
 console.log(`Dorszolandia ${VERSION}: ${files} plików · ${packed.length} B · ${sha}`);
