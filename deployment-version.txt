@@ -1,25 +1,25 @@
-Dorszolandia v24.13 PREMIUM — CONTENT POLISH + MAIN DUO
+Dorszolandia v24.14 PREMIUM — STORY WORLDS + CONTENT POLISH
 Drive deploy package: 1CTdWZR59dlHuG0ETPSAbquzG9MCJTDvH
-Current Drive package: Dorszolandia_v24_13_CONTENT_POLISH_PRODUCTION.tar.gz
-Current Drive package bytes: 21940297
-Current Drive package SHA256: 0c7db7c5c03e426edc21a37a14aaa87640999205e6c46d5fb4c736910c66980d
-Build version: v24.13-content-polish-final
+Current Drive package: Dorszolandia_v24_14_STORY_WORLDS_CONTENT_POLISH_FINAL.tar.gz
+Current Drive package bytes: 24402707
+Current Drive package SHA256: 5e104c7ecbea1b27fa4146e1f1d624314952913f39f6234bca88c51f20436d55
+Build version: v24.14-story-worlds-content-polish-final
 Architecture: 11 independent pages with clean URLs
 Main heroes: Dorszuś + Borys only in the featured character section
-Main hero descriptions: expanded and rewritten for end users
 Residents: 60 cards incl. Tata Dorsz; 8 filters retained
-Resident copy: removed the note about Tata Dorsz being at the end of the list
-Homepage: removed internal/project commentary and corrected Creator count to 51 props
-Dorszopedia: main heroes reduced to Dorszuś + Borys; editorial/project notes removed
-Games / Materials / Map / Stories / Songs / Creator / Shop: public copy cleaned of implementation notes
-Creator: 51 props; Google Drive provenance removed from public HTML
+Creator: 51 props; fish naming, mirror controls and saved composition retained
 Stories: 12 map worlds = 12 story slots; 7 full; 5 placeholders
+Tom I full: Zatoka Tajemnic; Las Wodorostów; Królewski Dwór
+Classic full sequence: Afera z Pęcherzykiem -> Księżniczka Algorytma -> Algoria Powraca -> Operacja Koralowy Kosmos
+Story card covers: map-life scenes assigned to each world
+Classic reader artwork: 4 dedicated vertical covers retained
 Map integration: all 12 places link to their assigned story slot
-Piosenki: 3 audio tracks + full video retained
+Public story source wording preserved; historical names inside source stories are not rewritten
+Piosenki: 3 audio tracks + full video retained; songs 2 and 3 optimized to browser-friendly 160 kbps MP3
 Shop: PLAN ONLY; no prices, checkout or payments
+Public implementation/editorial notes: removed
 Visible build stamps: removed from all public pages
 Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
-Deployment package: slimmed below 25 MB for stable Drive -> Vercel build
-QA: 11 pages; 2 featured heroes; 60 resident cards; 12 stories (7/5); 12 map locations; 51 creator props; JS syntax OK; editorial-note scan PASS
+Deployment package: 24,402,707 bytes, below 25 MB target
+QA: 11 pages; 2 featured heroes; 60 resident cards; 12 stories (7/5); 12 map locations; 12/12 map-story mapping; 51 creator props; JS syntax OK; asset scan PASS; editorial-note scan PASS
 Pipeline: GitHub main -> Vercel production
-Final validation fix: removed remaining Google Drive provenance attributes/meta text from Creator public HTML.
