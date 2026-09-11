@@ -1,19 +1,19 @@
-Dorszolandia v24.20 PREMIUM — SOCCER ICON SAFE FIX
-Drive deploy package: 1OzWx-qlR4S_EUh93cN9g8Xvw092y9uel
-Current Drive package: Dorszolandia_v24_20_SOCCER_ICON_UNICODE_SAFE_FIX.tar.gz
-Current Drive package bytes: 24421165
-Current Drive package SHA256: 163f1dd66d70c95a760a5063356f39edeb47cae88e745877585facff83b7ab4c
-Build version: v24.20-soccer-icon-safe-fix
-Scope: Bramkarz Dorsz only
-Games: 7 retained
-Goalkeeper ball: standard soccer icon ⚽
+Dorszolandia v24.21 PREMIUM — USER SOCCER BALL SAFE FIX
+Drive deploy package: 1evQPGxvfD0Lq9bfageGUhPaLKSwmcApT
+Current Drive package: Dorszolandia_v24_21_USER_SOCCER_BALL_SAFE_FIX.tar.gz
+Current Drive package bytes: 24493414
+Current Drive package SHA256: 6bc91892342bc3d2c112d6413c5686ca6c7a3e398d2808a7d3de42bb336e5533
+Build version: v24.21-user-soccer-ball-safe-fix
+Scope: Gry / Bramkarz Dorsz only
+Games: 7 retained; mechanics unchanged
+Goalkeeper ball: exact user-supplied association-football WebP at assets/games/pilka-nozna-user.webp
 American-football active reference: removed from goalkeeper game
-No image generated and no new graphic asset added
-Game logic: unchanged
-Other games: unchanged
+Generated images: none
+Visual handling: CSS crop only; uploaded source bytes unchanged
+Other six games: unchanged
 Story content: unchanged; source integrity 7/7 retained
 World story slots: unchanged at 12 total; 3 full; 9 placeholders
 Classic stories: unchanged at exactly 4 full stories
 Residents/Creator/Materials/Songs/Shop: unchanged
-Rollback: v24.19 package remains untouched
+Rollback: v24.19 and v24.20 packages remain untouched
 Pipeline: GitHub main -> Vercel production
