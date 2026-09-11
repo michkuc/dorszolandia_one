@@ -1,14 +1,14 @@
 Dorszolandia v24.22 PREMIUM — MATERIALS PUBLIC SAFE UPDATE
 Drive deploy package: 1TXXPDyIn-PvMd-Ys92ywp271Wzhg1bYr
 Current Drive package: Dorszolandia_v24_22_MATERIALS_PUBLIC_SAFE_UPDATE.tar.gz
-Current Drive package bytes: 26299982
-Current Drive package SHA256: c8b2af3872b7d3b5fe087fd301eaf7befc8b2d116f4b1a31503b8b184c7436f7
+Current Drive package bytes: 25012731
+Current Drive package SHA256: acf4d454353a866dd9f136e7e616b104c72f497f910a996d088cab4472196cc4
 Build version: v24.22-materials-public-safe-update
 Scope: Materials page + top navigation + privacy purge for lesson-plan assets
 Top navigation: Materialy added on all 11 pages
-New public posters: exactly 4 user-supplied files — Zegar i czas; Ortografia; Alfabet; Kalendarz szkolny 2026/2027
-Generated images: none
-Poster bytes: copied unchanged from user uploads
+New public posters: exactly 4 user-supplied posters — Zegar i czas; Ortografia; Alfabet; Kalendarz szkolny 2026/2027
+Generated/recreated artwork: none
+Poster handling: visually faithful WebP web copies made from the user-supplied posters to keep the deploy package below the Drive direct-download limit
 Private lesson plan: removed from public Materials page
 Private lesson-plan assets: removed from deploy package
 Private lesson-plan manifest/registry records: removed
