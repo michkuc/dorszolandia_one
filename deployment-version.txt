@@ -1,24 +1,26 @@
-Dorszolandia v24.15 PREMIUM — SAFE CLEANUP
-Drive deploy package: 1oZOzEzSQoRUM4xj9XujFZP2vJcqoP3f7
-Current Drive package: Dorszolandia_v24_15_SAFE_CLEANUP.tar.gz
-Current Drive package bytes: 24405506
-Current Drive package SHA256: b71fabe2a042bc2a4a34211b7921111a21531785c548d7b428b6fef135adfd79
-Build version: v24.15-safe-cleanup
+Dorszolandia v24.16 PREMIUM — SOURCE INTEGRITY SAFE FIX
+Drive deploy package: 1k_hXALY-a7fSnRCpcvBLjcxkpBGif560
+Current Drive package: Dorszolandia_v24_16_SOURCE_INTEGRITY_SAFE_FIX.tar.gz
+Current Drive package bytes: 24411836
+Current Drive package SHA256: 74c9bc5d099e626ae9779bc698456b92b72c53668a7d2aef090025f81583211a
+Build version: v24.16-source-integrity-safe-fix
 Architecture: 11 independent pages with clean URLs
-Visual design: retained from v24.14; no redesign
+Visual design: retained from v24.15; no redesign
 Residents: 60 cards incl. Tata Dorsz; 8 filters retained
 Public section "Postacie z opowiadań": removed; underlying source data/assets retained
-Main heroes: Dorszuś + Borys moved below Mieszkańcy miasta i Dwór Koralu
+Main heroes: Dorszuś + Borys below Mieszkańcy miasta i Dwór Koralu
 World story slots: 12 total; 3 full; 9 placeholders
 Full map-world stories: Zatoka Tajemnic; Las Wodorostów; Królewski Dwór
 Restored placeholders: Zamek Dorszolandii; Laboratorium Bąbel; Wieża Czarodzieja; Port Muszelka
 Classic stories: 4 full stories preserved separately from map-world slots
 Classic covers: existing dedicated posters reused; no new images generated
-Map integration: 12/12 pins link only to their own world-story slots
-Classic source texts: unchanged
+Source integrity: 7 published full stories verified 1:1 and locked by normalized SHA256
+Canonical classic source: Dorszolandia_5_opowiadan_PELNE_1DO1-2.txt / MASTER FINAL 1:1 verified source
+Canonical Tom I source: Dorszolandia_Tom_I.docx
+Map integration: all story_id/story_title/story_status/story_href fields synchronized with world story slots
 Creator: 51 props retained
 Piosenki: 3 audio tracks + full video retained
 Shop: PLAN ONLY; no prices, checkout or payments
-QA: 11 pages; no missing local references; no duplicate HTML IDs; JS syntax PASS; map/story mapping PASS
-Rollback: v24.14 Drive package remains untouched
+QA: source integrity 7/7 PASS; map data PASS; public story data PASS; no story-reader truncation
+Rollback: v24.15 and v24.14 packages remain untouched
 Pipeline: GitHub main -> Vercel production
