@@ -22,3 +22,4 @@ Copyright: © 2026 Alexander Kuc · Dorszolandia. Wszelkie prawa zastrzeżone.
 Deployment package: slimmed below 25 MB for stable Drive -> Vercel build
 QA: 11 pages; 2 featured heroes; 60 resident cards; 12 stories (7/5); 12 map locations; 51 creator props; JS syntax OK; editorial-note scan PASS
 Pipeline: GitHub main -> Vercel production
+Redeploy: 2026-09-11 after Drive package synchronization.
